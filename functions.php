@@ -135,25 +135,6 @@ function awd_register_classes_post_type() {
 	register_post_type( 'awd_classes', $args );
 }
 
-/*
- * Register Leadership post type
-*/
-add_action( 'init', 'awd_register_team_post_type' );
-function awd_register_team_post_type() {
-	$args = array(
-		'label' => 'Team',
-		'public' => false,
-		'show_ui' => true,
-		'show_in_menu' => true,
-		'has_archive' => false,
-		'rewrite' => true,
-		'query_var' => true,
-		'supports' => ['title', 'thumbnail', 'editor'],
-		'menu_icon' => 'dashicons-businessperson' // See Icon --> https://developer.wordpress.org/resource/dashicons/#format-video
-	);
-	register_post_type( 'awd_team', $args );
-}
-
 function getClasses($numberposts = -1, $orderBy = 'meta_value', $metaKey = 'class_date', $order = 'DESC') {
 	$args = array(
 		'numberposts' => $numberposts,
