@@ -1,0 +1,652 @@
+/*CUSTOM MODULE BASED TEMPLATE*/
+body.page-template-template-modulebased_custom #main-content {
+  padding-bottom: 0;
+}
+
+.magneti-custom-template-wrapper {
+  position: relative;
+
+  [class*="column"] + [class*="column"]:last-child {
+    float: none;
+  }
+  
+  .padding-control {
+    position: relative;
+    padding: 60px 0;
+  
+    &.top-divider {
+      padding-top: 10px !important;
+    }
+  
+    &.more-padding-bottom {
+      .center {
+        padding-bottom: 30px;
+      }
+    }
+  
+    &.more-padding-top {
+      .center {
+        padding-top: 40px;
+      }
+    }
+  }
+  
+  .no-padding-top {
+    padding-top: 1px !important;
+  }
+  
+  .no-padding-bottom {
+    padding-bottom: 1px !important;
+    bottom: -1px; // eliminates a 1px gap between modules. This was creating a gray border between two white modules
+  }
+  
+  .padding-control.add-bottom {
+    padding: 60px 0 130px;
+  }
+  
+  // .padding-control:last-child {
+  //   padding: 60px 0 230px;
+  // }
+  
+  .clear {
+    clear: both;
+  }
+  
+  .template-part-hero {
+    position: relative;
+  }
+  
+  .template-part-hero.short {
+    // padding: 180px 0 80px;
+    text-align: center;
+  
+    &.add-bottom {
+      padding-bottom: 150px;
+    }
+  }
+  
+  .template-part-hero.tall:not(.has-bg) {
+    padding: 150px 0 50px;
+    text-align: center;
+  
+    &.add-bottom {
+      padding-bottom: 120px;
+    }
+  }
+  
+  .normal-hero-wrap {
+    margin: 0 auto;
+  }
+  
+  .template-part-hero h1,
+  .template-part-hero h2,
+  .template-part-hero h3,
+  .template-part-hero h4 {
+    color: #002d62;
+  }
+  
+  .normal-hero-wrap p {
+    font-size: 1.3rem;
+  }
+  
+  .custom-template-module.dark-mode p,
+  .custom-template-module.dark-mode p a,
+  .custom-template-module.dark-mode ul li,
+  .custom-template-module.dark-mode ol li,
+  .custom-template-module.dark-mode h1,
+  .custom-template-module.dark-mode h2,
+  .custom-template-module.dark-mode h3,
+  .custom-template-module.dark-mode h4,
+  .custom-template-module.dark-mode h5,
+  .custom-template-module.dark-mode h5,
+  .custom-template-module.dark-mode .h-m,
+  .custom-template-module.dark-mode .h-l,
+  .custom-template-module.dark-mode .h-xl,
+  .custom-template-module.dark-mode .h-2xl,
+  .custom-template-module.dark-mode .h-3xl,
+  .custom-template-module.dark-mode .link-text,
+  .custom-template-module.dark-mode .link-with-icon {
+    color: #FFF !important;
+    fill: #FFF !important;// in case any children icons are looking to inherit
+  }
+  
+  .custom-template-module ul li {
+    margin-bottom: 1.5rem;
+  }
+  
+  .custom-template-module img {
+    position: relative;
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  .custom-template-module.center-content {
+    text-align: center;
+  }
+  
+  .split-hero-wrap {
+    position: relative;
+    text-align: left;
+  }
+  
+  .split-hero-wrap .a-columner {
+    position: relative;
+  }
+  
+  .split-hero-wrap .col-left {
+    margin-bottom: 40px;
+  }
+  
+  .template-part-standard-content {
+    position: relative;
+  }
+  
+  .template-part-standard-content .inner-wrap {
+    position: relative;
+  }
+  
+  .template-part-standard-content .inner-wrap p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .template-part-standard-content.narrow-inner .inner-wrap {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .template-part-5050-content,
+  .template-part-5050-content-card {
+    position: relative;
+    &.reverse-columns-on-mobile {
+      .template-split-5050-wrapper,
+      .template-split-5050-card-wrapper {
+
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2.5rem;
+        @media screen and (min-width: 960px){
+          flex-direction: row;
+        }
+
+        .column1 {
+          margin-bottom: 0;
+        }
+        
+      }
+    }
+  }
+  
+  .template-part-5050-content .template-split-5050-wrapper {
+    position: relative;
+  }
+  
+  .template-part-5050-content .template-split-5050-wrapper .a-columner {
+    position: relative;
+  }
+  
+  .template-part-5050-content .template-split-5050-wrapper .a-columner p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .template-part-5050-content .template-split-5050-wrapper .column1,
+  .template-part-5050-content-card .template-split-5050-card-wrapper .column1 {
+    margin-bottom: 40px;
+  }
+  
+  .template-part-3366-content {
+    position: relative;
+    .template-split-3366-wrapper {
+      position: relative;
+      .a-columner {
+        position: relative;
+      }
+      
+      .a-columner p:last-child {
+        margin-bottom: 0;
+      }
+      
+      .column1 {
+        margin-bottom: 40px;
+      }
+    }
+    
+  }
+  
+  .template-part-5050-content-card {
+    background-image: none !important;
+    .center {
+      position: relative;
+      z-index: 2;
+    }
+    .image-panel {
+      margin-top: -11vw;
+      position: relative;
+      z-index: 1;
+      &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/pipes-bottom-left.svg');
+        background-size: 70%;
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        // transform: rotate(180deg)
+      }
+    }
+  }
+  
+  .template-divider-module {
+    position: relative;
+  }
+  
+  .template-divider-module .divider-line {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #002d62;
+  }
+  
+  .template-part-column-content {
+    position: relative;
+    .template-column-wrapper {
+      position: relative;
+      .a-columner {
+        position: relative;
+        margin-bottom: 50px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .intro-image-wrap {
+          position: relative;
+          display: block;
+          width: 110px;
+          margin: 0 auto 30px;
+        }
+        .intro-image-wrap img {
+          margin: 0 auto;
+        }
+      }
+      
+    }
+    
+    &.cols-have-background .template-column-wrapper .a-columner {
+      padding: 40px 30px;
+    }
+    
+    
+    &.column4 .template-column-wrapper .a-columner .intro-image-wrap {
+      width: 100px;
+    }
+    
+    &.column5 .template-column-wrapper .a-columner .intro-image-wrap {
+      width: 90px;
+    }
+  }
+  
+  
+
+  
+  .form-wrapper {
+    position: relative;
+    display: block;
+    padding: 30px;
+    background: #012d62;
+    border-radius: 4px;
+    form label {
+      color: #FFF;
+    }
+    
+    .hs-error-msgs li {
+      margin-bottom: 0.9rem !important;
+    }
+    
+    .hs-error-msgs .hs-error-msg {
+      margin-bottom: 0;
+    }
+    
+    p,
+    p a,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: #FFF;
+      text-align: center;
+    }
+    
+    .hs-input {
+      width: 100% !important;
+    }
+    
+    .hs_submit {
+      padding-top: 15px;
+      padding-bottom: 10px;
+    }
+    
+    input[type=submit] {
+      background: #efb312;
+      border-color: #efb312;
+      color: #002d62;
+      cursor: pointer;
+    }
+  }
+  
+  
+  .top-divider-option1 .divider-panel {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: calc(100% + 70px);
+    top: -70px;
+    left: 0;
+    mask-image: url('../images/main-top-divider.svg');
+    object-fit: cover;
+    mask-size: 200% auto;
+    mask-repeat: no-repeat;
+    mask-position: center top;
+  }
+  
+  .top-divider-option2 .divider-panel {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: calc(100% + 70px);
+    top: -70px;
+    left: 0;
+    mask-image: url('../images/main-top-divider2.svg');
+    object-fit: cover;
+    mask-size: 200% auto;
+    mask-repeat: no-repeat;
+    mask-position: center top;
+  }
+  
+  .top-divider-option3 .divider-panel {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: calc(100% + 70px);
+    top: -70px;
+    left: 0;
+    mask-image: url('../images/main-top-divider.svg');
+    object-fit: cover;
+    mask-size: 200% auto;
+    mask-repeat: no-repeat;
+    mask-position: center top;
+  }
+  
+  .carousel-title {
+    margin-bottom: 70px;
+  }
+
+  .template-carousel-wrapper {
+    position: relative;
+
+    .a-slide {
+      position: relative;
+
+      .intro-image-wrap {
+        max-width: 140px;
+        margin: 0 auto 24px;
+
+        img {
+          position: relative;
+          display: block;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      .line2 {
+        margin-top: 22px;
+      }
+    }
+
+    .slick-dots {
+      position: relative;
+      padding-top: 60px;
+      text-align: center;
+      margin: 0 !important;
+
+      li {
+        display: inline-block;
+        vertical-align: top;
+        width: 15px;
+        height: 15px;
+        list-style: none !important;
+        margin: 0 8px 0 !important;
+        cursor: pointer;
+        background: #262626;
+        border-radius: 50%;
+        overflow: hidden;
+
+        button {
+          visibility: hidden;
+          width: 15px;
+          height: 15px;
+          overflow: hidden;
+        }
+
+        &.slick-active {
+          background: #D96C2B;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .magneti-custom-template-wrapper {
+    .template-part-column-content .template-column-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-column-gap: 40px;
+      grid-row-gap: 50px;
+    }
+  
+    .template-part-column-content .template-column-wrapper .a-columner {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .magneti-custom-template-wrapper {
+    .top-divider-option1 .divider-panel {
+      mask-size: 100% auto;
+    }
+  
+    .top-divider-option2 .divider-panel {
+      mask-size: 100% auto;
+    }
+  
+    .top-divider-option3 .divider-panel {
+      mask-size: 100% auto;
+    }
+  
+    .padding-control {
+      padding: 80px 0;
+    }
+  
+    .padding-control.add-bottom {
+      padding: 80px 0 140px;
+    }
+  
+    // .padding-control:last-child {
+    //   padding: 80px 0 240px;
+    // }
+  
+    .form-wrapper {
+      padding: 40px 40px;
+    }
+  
+    .template-part-5050-content .template-split-5050-wrapper,
+    .template-part-5050-content-card .template-split-5050-card-wrapper,
+    .template-part-3366-content .template-split-3366-wrapper {
+      display: flex;
+    }
+  
+    .template-part-5050-content.vertical-align .template-split-5050-wrapper,
+    .template-part-3366-content.vertical-align .template-split-3366-wrapper {
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .template-part-3366-content.flip .template-split-3366-wrapper {
+      flex-direction: row-reverse;
+    }
+  
+    .template-part-5050-content .template-split-5050-wrapper .a-columner,
+    .template-part-5050-content-card .template-split-5050-card-wrapper .a-columner {
+      width: 50%;
+      padding-left: 30px;
+    }
+  
+    .template-part-5050-content .template-split-5050-wrapper .column1,
+    .template-part-5050-content-card .template-split-5050-card-wrapper .column1 {
+      width: 50%;
+      padding-left: 0;
+      padding-right: 30px;
+      margin-bottom: 0;
+    }
+  
+    .template-part-5050-content .template-split-5050-wrapper .column2,
+    .template-part-5050-content-card .template-split-5050-card-wrapper .column2 {
+      margin-top: 0;
+    }
+  
+    .template-part-3366-content .template-split-3366-wrapper .column1 {
+      width: 40%;
+      padding-right: 30px;
+      margin-bottom: 0;
+    }
+  
+    .template-part-3366-content .template-split-3366-wrapper .column2 {
+      width: 60%;
+      padding-left: 30px;
+    }
+  
+    .template-part-3366-content.flip .template-split-3366-wrapper .column1 {
+      width: 40%;
+      padding-right: 0;
+      padding-left: 30px;
+      margin-bottom: 0;
+    }
+  
+    .template-part-3366-content.flip .template-split-3366-wrapper .column2 {
+      width: 60%;
+      padding-right: 30px;
+      padding-left: 0;
+    }
+  
+    .template-part-column-content.column3 .template-column-wrapper {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-column-gap: 40px;
+      grid-row-gap: 50px;
+    }
+  
+    .template-part-column-content.column5 .template-column-wrapper {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-column-gap: 40px;
+      grid-row-gap: 50px;
+    }
+  
+    .template-part-column-content.column4 .template-column-wrapper {
+      grid-column-gap: 50px;
+      grid-row-gap: 60px;
+    }
+  
+    .template-part-column-content .template-column-wrapper .a-column .intro-image-wrap {
+      width: 150px;
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .magneti-custom-template-wrapper {
+    .top-divider-option1 .divider-panel {
+      height: calc(100% + 100px);
+      top: -100px;
+    }
+  
+    .top-divider-option2 .divider-panel {
+      height: calc(100% + 100px);
+      top: -100px;
+    }
+  
+    .top-divider-option3 .divider-panel {
+      height: calc(100% + 100px);
+      top: -100px;
+    }
+  
+    .padding-control {
+      padding: 80px 0;
+    }
+  
+    .padding-control.add-bottom {
+      padding: 80px 0 190px;
+    }
+  
+    .template-part-hero.short {
+      // padding: 320px 0 110px;
+  
+      &.add-bottom {
+        padding-bottom: 210px;
+      }
+    }
+  
+    .template-part-hero.tall:not(.has-bg) {
+      padding: 270px 0 270px;
+  
+      &.add-bottom {
+        padding-bottom: 170px;
+      }
+    }
+  
+    .split-hero-wrap .a-columner {
+      padding-right: 40px;
+    }
+  
+    .split-hero-wrap .col-left {
+      padding-right: 40px;
+      padding-left: 0;
+    }
+  
+    .template-part-5050-content .template-split-5050-wrapper .a-columner {
+      padding-left: 32px;
+    }
+  
+    .template-part-5050-content .template-split-5050-wrapper .column1 {
+      padding-left: 0;
+      padding-right: 32px;
+    }
+  
+    .template-part-column-content.column3 .template-column-wrapper {
+      grid-column-gap: 50px;
+      grid-row-gap: 60px;
+    }
+  
+    .template-part-column-content.column4 .template-column-wrapper {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  
+    .template-part-column-content.column5 .template-column-wrapper {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  
+    .template-part-column-content.column5 .template-column-wrapper {
+      grid-column-gap: 40px;
+      grid-row-gap: 60px;
+    }
+  }
+}

@@ -1,0 +1,232 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+/*****************
+  STYLES
+*****************/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include sans-serif-400;
+  font-size: 18px;
+  background-color: $awd-black;
+  &.lock-scrolling {
+    @media screen and (max-width: 959px) {
+      overflow: hidden;
+    }
+  }
+}
+
+.pull-top {
+  margin-top: -50px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+img.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.alignleft {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+img.alignright {
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.no-bottom {
+  margin-bottom: 7px;
+}
+
+@media only screen and (max-width: 500px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+.button-wrap {
+  position: relative;
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  @media screen and (min-width: 960px) {
+    margin-top: 3.5rem;
+    flex-direction: row;
+    display: flex;
+  }
+
+  &.centered {
+    align-items: center;
+    @media screen and (min-width: 960px) {
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
+
+  &.more-bottom {
+    margin-bottom: 50px;
+  }
+}
+
+/*****************************************************/
+
+.center {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1120px;
+
+  @media screen and (min-width: 1200px){
+    padding: 0;
+  }
+
+  &.outer {
+    @media screen and (max-width: 959px) {
+      padding-left: 62px;
+    }
+  }
+
+  &.wide {
+    max-width: 1228px;
+  }
+}
+
+.narrow-inner {
+  .center {
+    max-width: 960px;
+  }
+}
+
+/*****************************************************/
+
+.circle-quote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:before {
+    background-color: #f5f5f5;
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    @include pseudo;
+  }
+  @extend .aspect-square;
+  .content {
+    position: relative;
+    z-index: 2;
+    @extend .h-2xl;
+    text-align: center;
+    line-height: 1.1;
+    padding: 0 2rem;
+    @include serif-400;
+    @extend .text-awd-green;
+    @media screen and (min-width: 960px) {
+      // padding: 0;
+    }
+  }
+}
+
+/*
+ FOrms
+ */
+
+.gform_wrapper {
+  ::-webkit-input-placeholder {
+    /* Edge */
+    color: #a3a3a3;
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #a3a3a3;
+  }
+
+  ::placeholder {
+    color: #a3a3a3;
+  }
+
+  &.gravity-theme {    
+    .ginput_complex span {
+      @media screen and (max-width: 640px){
+        margin-bottom: 14px !important;
+      }
+    }
+    .ginput_complex span.name_last {
+      @media screen and (max-width: 640px){
+        margin-bottom: 0 !important;
+      }
+    }
+
+    .gform_button {
+      @media screen and (max-width: 640px){
+        width: 100%;
+      }
+    }
+    
+    .gform_fields {
+      grid-row-gap: 14px !important;
+      grid-column-gap: 14px !important;
+      
+      .gfield input,
+      .gfield select,
+      .gfield textarea {
+        padding: 1.5rem;
+        border: 1px solid #f0f0f0;
+        background-color: #f0f0f0;
+        color: #a3a3a3 !important;
+        font-family: "Georgia", serif;
+        font-style: italic;
+        font-size: 1.25rem;
+        font-weight: bold;
+        @include thetransition;
+        &:hover {
+          background-color: lighten(#f0f0f0, 2%);
+          border-color: lighten(#f0f0f0, 2%);
+        }
+        &:focus {
+          background-color: lighten(#f0f0f0, 2%);
+          outline-color: $awd-arctic
+        }
+      }
+      
+      label,
+      legend {
+        // visually hidden, not affecting the document flow, but still accessible to screen readers
+        font-size: 0.1px !important;
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      
+      }
+    }
+    
+  }
+  
+}

@@ -1,0 +1,497 @@
+/*********************
+TYPOG MIXINS
+*********************/
+
+/* text alignment */
+.text-left   { text-align: left; }
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+
+@font-face {
+  font-family: 'Din 2014';
+  font-weight: 700;
+  src: url("../fonts/DIN2014-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: 'Din 2014';
+  font-weight: 600;
+  src: url("../fonts/DIN2014-DemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: 'Din 2014';
+  font-weight: 800;
+  src: url("../fonts/DIN2014-ExtraBold.woff") format("woff");
+}
+@font-face {
+  font-family: 'Din 2014';
+  font-weight: 300;
+  src: url("../fonts/DIN2014-Light.woff") format("woff");
+}
+@font-face {
+  font-family: 'Din 2014';
+  font-weight: 400;
+  src: url("../fonts/DIN2014-Regular.woff") format("woff");
+}
+
+.din-bold {
+  font-family: 'Din 2014';
+  font-weight: 700;
+}
+.din-demi {
+  font-family: 'Din 2014';
+  font-weight: 600;
+}
+.din-extra-bold {
+  font-family: 'Din 2014';
+  font-weight: 800;
+}
+.din-light {
+  font-family: 'Din 2014';
+  font-weight: 300;
+}
+.din {
+  font-family: 'Din 2014';
+  font-weight: 400;
+}
+
+@mixin sans-serif-400 {
+	@extend .din;
+}
+
+@mixin sans-serif-700 {
+  @extend .din-bold;
+}
+
+@mixin sans-serif-800 {
+	@extend .din-extra-bold;
+}
+
+@mixin serif-400 {
+	font-family: 'Georgia', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+}
+
+@mixin serif-700 {
+	font-family: 'Georgia', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}
+
+@mixin serif-800 {
+	font-family: 'Georgia', sans-serif;
+	font-style: normal;
+	font-weight: 800;
+}
+
+
+
+@mixin fa-700 {
+	font-family: filmotype-austin, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}
+
+body {
+  @extend .din;
+  color: $gray1;
+}
+
+@mixin m-body {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+@mixin body {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.h-s {
+  margin-bottom: 8px;
+  font-size: 18px;
+  line-height: 117%;
+  @include sans-serif-700;
+  color: $black;
+}
+
+.h-m {
+  margin-bottom: 18px;
+  font-size: 24px;
+  line-height: 117%;
+  @include sans-serif-800;
+}
+
+.h-l {
+  margin-bottom: 20px;
+  font-size: 32px;
+  line-height: 107%;
+  @include sans-serif-800;
+}
+
+.h-xl {
+  margin-bottom: 23px;
+  font-size: calc(36px + 10 * ((100vw - 320px) / 960));
+  line-height: 114%;
+  font-weight: 400;
+}
+
+.h-2xl {
+  margin-bottom: 2.5rem;
+  font-size: calc(34px + 12 * ((100vw - 320px) / 960));
+  line-height: 104%;
+  @extend .din-light;
+  
+  
+  &.serif {
+    line-height: 120%;
+    @include serif-400;
+    font-size: calc(22px + 12 * ((100vw - 320px) / 960));
+    @media screen and (min-width: 768px){
+      font-size: calc(34px + 12 * ((100vw - 320px) / 960));
+    }
+  }
+
+  // &.hw {
+  //   line-height: 90%;
+  //   font-size: calc(45px + 25 * ((100vw - 320px) / 960));
+  // }
+}
+
+.h-3xl {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  @extend .din-extra-bold;
+  letter-spacing: .125rem;
+  text-transform: uppercase;
+  
+  @media screen and (min-width: 768px){
+    letter-spacing: .5rem;
+    font-size: 2.375rem;
+  }
+
+  // &.hw {
+  //   line-height: 90%;
+  //   font-size: calc(60px + 50 * ((100vw - 320px) / 960));
+  // }
+}
+
+.h-special {
+  margin-bottom: 0;
+  font-size: calc(46px + 20 * ((100vw - 320px) / 960));
+  line-height: 100%;
+  letter-spacing: 7px;
+  font-weight: 700;
+
+  &.upper {
+    text-transform: uppercase;
+  }
+}
+
+.h-hand {
+  margin-bottom: 0;
+  font-size: calc(50px + 20 * ((100vw - 320px) / 960));
+  line-height: 100%;
+
+  &.upper {
+    text-transform: uppercase;
+  }
+}
+
+.h-handxl {
+  margin-bottom: 0;
+  font-size: calc(60px + 50 * ((100vw - 320px) / 960));
+  line-height: 100%;
+}
+
+.body-s {
+  @include sans-serif-400;
+  font-size: 12px;
+  line-height: 144%;
+}
+
+.body-m {
+  @include sans-serif-400;
+  font-size: 18px;
+  line-height: 144%;
+}
+
+.body-l {
+  @include sans-serif-400;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+.body-xl {
+  @include sans-serif-400;
+  font-size: 28px;
+  line-height: 120%;
+}
+
+.body-2xl {
+  @include sans-serif-400;
+  font-size: 32px;
+  line-height: 122%;
+}
+
+.text-white {
+  color: $white;
+}
+.text-black {
+  color: $black;
+}
+.text-awd-black {
+  color: $awd-black;
+}
+.text-awd-navy {
+  color: $awd-navy;
+}
+.text-awd-denim {
+  color: $awd-denim;
+}
+.text-awd-arctic {
+  color: $awd-arctic;
+}
+.text-awd-green {
+  color: $awd-green;
+}
+.text-awd-blue {
+  color: $awd-blue;
+}
+
+h1, h2, h3, h4, h5,
+.h-s, .h-m, .h-l, .h-xl, .h-2xl, .h-3xl {
+  position: relative;
+  @include sans-serif-700;
+  // color: $awd-blue;
+
+  a {
+    // color: $awd-blue;
+    text-decoration: none;
+  }
+
+  &.upper {
+    text-transform: uppercase;
+  }
+
+  &.hw {
+    // @include fa-700;
+    line-height: 90%;
+  }
+
+  &.more-top {
+    margin-top: 50px !important;
+  }
+
+  &.more-bottom {
+    margin-bottom: 50px !important;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.white {
+  @extend .text-white;
+
+  a {
+    @extend .text-white;
+  }
+}
+
+.black {
+  @extend .text-black;
+
+  a {
+    @extend .text-black;
+  }
+}
+.awd-black {
+  @extend .text-awd-black;
+
+  a {
+    @extend .text-awd-black;
+  }
+}
+
+.navy {
+  @extend .text-awd-navy;
+
+  a {
+    @extend .text-awd-navy;
+  }
+}
+
+.denim {
+  @extend .text-awd-denim;
+
+  a {
+    @extend .text-awd-denim;
+  }
+}
+
+.arctic {
+  @extend .text-awd-arctic;
+
+  a {
+    @extend .text-awd-arctic;
+  }
+}
+
+.green {
+  @extend .text-awd-green;
+
+  a {
+    @extend .text-awd-green;
+  }
+}
+
+.blue {
+  @extend .text-awd-blue;
+
+  a {
+    @extend .text-awd-blue;
+  }
+}
+
+h2, h3, h4, h5,
+.h-s, .h-m, .h-l, .h-xl, .h-2xl, .h-3xl {
+  margin-top: 40px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h1 {
+  @extend .h-3xl;
+}
+
+h2 {
+  @extend .h-2xl;
+}
+
+h3 {
+  @extend .h-xl;
+}
+
+h4, h5 {
+  @extend .h-l;
+}
+
+a {
+  color: $awd-black;
+}
+
+p {
+  position: relative;
+  margin-bottom: 25px;
+  @include sans-serif-400;
+  font-size: 18px;
+  line-height: 145%;
+  color: $gray1;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+p, li {
+  a {
+    word-break: break-word;
+    color: $black;
+    text-decoration: underline;
+  }
+}
+
+blockquote {
+  position: relative;
+  margin-bottom: 30px;
+
+  p {
+    @extend .body-2xl;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+#content {
+  ul:not(.slick-dots),
+  ol {
+    position: relative;
+    margin: 0 0 26px 30px;
+
+    li {
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 31px;
+    }
+
+    &.more {
+      li {
+        margin-bottom: 25px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul li {
+    list-style: disc;
+  }
+
+  ol li {
+    list-style: decimal;
+  }
+}
+
+p code {
+    background: #FEF8DD;
+    word-wrap: break-word;
+    padding: 0.1rem 0.3rem 0.2rem;
+    border-radius: 0.2rem;
+}
+
+
+.nav-text {
+  font-size: .875rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  @extend .din-bold;
+  &--sm {
+    font-size: .75rem;
+  }
+}
+
+.link-with-icon {
+  display: inline-flex;
+  align-items: center;
+  &:hover {
+    svg {
+      transform: translate3d(.5rem,0,0);
+    }
+  }
+  .link-text {
+    white-space: nowrap;
+  }
+  svg {
+    transition: transform .2s ease-out;
+    margin-left: 0.5rem;
+    display: inline-block;
+    width: 100%;
+    transform: translate3d(0,0,0);
+  }
+}
+
+.link-icon {
+  max-width: .5rem;
+  display: inline-block;
+  fill: inherit;
+}

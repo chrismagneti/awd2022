@@ -1,0 +1,237 @@
+#header {
+  background-color: $awd-green;
+
+  > .center {
+    @media screen and (max-width: 959px){
+      padding: 0 30px;
+    }
+  }
+
+  #main-logo {
+    display: block;
+    max-width: 100px;
+
+    @media screen and (min-width: 960px){
+      max-width: 216px;
+    }
+    
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  .top-bar {
+    padding: .5rem 0;
+    display: flex;
+    justify-content: flex-end;
+    @media screen and (min-width: 960px){
+      padding: 1rem 0;
+    }
+  }
+
+  .bottom-bar {
+    position: relative;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $awd-black;
+    height: 40px;
+    @media screen and (min-width: 960px){
+      height: auto;
+      background-color: transparent;
+    }
+    &:before {
+      content: '';
+      display: block;
+      background-color: $awd-black;
+      position: absolute;
+      height: 100%;
+      right: 100%;
+      top: 0;
+      width: 100vw;
+    }
+    .left {
+      background-color: $awd-black;
+      flex: 1;
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+    }
+    .nav-text {
+      color: white;
+      fill: white; // in case any children icons are looking to inherit
+    }
+  }
+
+  #primary-navigation-wrap {
+    @include thetransition;
+    @media screen and (max-width: 959px){
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      width: calc(100% - 1.875rem);
+      height: 100vh;
+      z-index: 100;
+      left: 0;
+      top: 70px;
+      background-color: $awd-black;
+      padding: 2rem;
+      pointer-events: none;
+      opacity: 0;
+      transform: scaleY(0);
+      transform-origin: left top;
+    }
+    @media screen and (min-width: 960px){
+      margin-right: -1rem
+    }
+    &.shown {
+      @media screen and (max-width: 959px){
+        transform: scaleY(100%);
+        opacity: 1;
+        pointer-events: all;
+        ul {
+          transform: translateY(0);
+        }
+      }
+    }
+    > ul {
+      @include thetransition;
+      transition-delay: 4s;
+      @media screen and (max-width: 959px){
+        flex-grow: 1;
+      }
+      @media screen and (min-width: 960px){
+        display: flex;
+        align-items: center;
+        &:hover {
+          > li {
+            > a {
+              color: $gray2;
+            }
+          }
+        }
+      }
+      > li {
+        position: relative;
+        z-index: 2;
+
+        &:after {
+          @include pseudo;
+          background-color: $awd-black;
+          // the transform positioning, as well as calc(100% + 2px) is to prevent a weird gap from forming between the nav items where the background color was shining through
+          transform: translate3d(-50%,-50%,0) scaleY(100%);
+          width: calc(100% + 2px);
+          height: 100%;
+          top: 50%;
+          left: 50%;
+          z-index: 1;
+          transform-origin: center top;
+          // transform-origin: right center;
+          transition: all 0.3s ease-out;
+          will-change: transform;
+        }
+        
+        &:hover {
+          a {
+            background-color: $awd-green;
+            color: white;
+          }
+        }
+
+        @media screen and (min-width: 960px){
+          
+          &:hover {
+            a {
+              background-color: transparent;
+              transition: color .1s ease-in;
+            }
+            &:after {
+              transform: translate3d(-50%,-50%,0) scaleY(0);
+              transition: all 0.1s ease-out;
+            }
+          }
+        }
+
+      }
+      a {
+        @extend .nav-text;
+        display: block;
+        position: relative;
+        z-index: 2;
+        transition: color .3s ease-in;
+        @media screen and (max-width: 959px){
+          font-weight: 400;
+          letter-spacing: 6px;
+          padding: 1rem 1.5rem;
+          font-size: 1.5rem;
+          
+        }
+        @media screen and (min-width: 960px){
+          padding: 3.25rem 1rem;
+        }
+      }
+    }
+  }
+
+  #nav-trigger {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 20;
+    // outline: 0.5px dotted white;
+
+    @media screen and (min-width: 960px){
+      display: none;
+    }
+    
+    .line {
+      position: absolute;
+      display: block;
+      width: 28px;
+      height: 4px;
+      left: 12px;
+      background: $white;
+      opacity: 1;
+      border-radius: 1rem;
+      @include thetransition;
+
+      &.line1 {
+        top: 10px;
+      }
+
+      &.line2 {
+        top: 17px;
+      }
+
+      &.line3 {
+        top: 24px;
+        width: 20px;
+      }
+    }
+
+    &.open {
+      .line2 {
+        opacity: 0;
+      }
+
+      .line1 {
+        top: 18px;
+        transform: rotate(45deg);
+      }
+
+      .line3 {
+        top: 18px;
+        transform: rotate(-45deg);
+        width: 28px;
+      }
+    }
+    
+  }
+  
+}

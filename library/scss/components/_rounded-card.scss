@@ -1,0 +1,22 @@
+.rounded-card {
+  background-color: white;
+  padding: 2.5rem;
+  @media screen and (min-width: 768px){
+    padding: 4rem;
+  }
+  @media screen and (min-width: 1200px){
+    padding: 6rem;
+  }
+  &.rounded-tl-br {
+    border-radius: 2.5rem 0 2.5rem 0;
+    @media screen and (min-width: 960px){
+      border-radius: 8rem 0 8rem 0
+    }
+  }
+  &.rounded-tr-bl {
+    border-radius: 0 2.5rem 0 2.5rem;
+    @media screen and (min-width: 960px){
+      border-radius: 0 8rem 0 8rem;
+    }
+  }
+}
