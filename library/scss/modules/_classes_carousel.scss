@@ -67,24 +67,6 @@
       }
     }
 
-    .blog-carousel {
-      .post-content-wrapper {
-        padding: 3rem;
-        @media screen and (min-width: 1200px) {
-          padding: 3rem 1.5rem;
-        }
-        .post-title {
-          margin-bottom: 1rem;
-          @media screen and (min-width: 960px) {
-            height: 100px;
-          }
-        }
-        .btn {
-          margin-top: 4rem;
-        }
-      }
-    }
-
     .post-thumbnail-wrapper {
       display: block;
       overflow: hidden;
@@ -105,11 +87,12 @@
       transform: translate3d(-50%, 0, 0);
       top: calc(100% + 7rem);
       left: 50%;
-
       display: none; // only enabled if the parent has .has-multiple-slides class
 
+      @media screen and (min-width: 768px) {
+        top: calc(100% + 12rem);
+      }
       @media screen and (min-width: 960px) {
-        // top: calc(100% + -4rem);
         top: calc(100% + 9rem);
       }
 
@@ -124,7 +107,7 @@
         background: #009f9c;
         border-radius: 50%;
         overflow: hidden;
-        @media screen and (min-width: 960px) {
+        @media screen and (min-width: 768px) {
           background: #c4c4c4;
           margin: 0 8px 0 !important;
           height: 1rem;
@@ -136,7 +119,7 @@
           width: 6px;
           height: 6px;
           overflow: hidden;
-          @media screen and (min-width: 960px) {
+          @media screen and (min-width: 768px) {
             height: 1rem;
             width: 1rem;
           }
@@ -166,16 +149,24 @@
         transition: all 0.2s ease-out;
         top: calc(100% + 4rem);
         cursor: pointer;
+        border-radius: 100%;
+        border: 1px solid white;
 
-        &:hover {
-          opacity: 0.75;
+        &:not(.slick-disabled){
+          &:hover {
+            background-color: $awd-green;
+            border: 1px solid $awd-green;
+          }
+        }
+
+        @media screen and (min-width: 768px) {
+          top: calc(100% + 7rem);
+          width: 3.75rem;
+          height: 3.75rem;
         }
 
         @media screen and (min-width: 960px) {
-          // top: calc(100% - 10rem);
           top: calc(100% + 4rem);
-          width: 3.75rem;
-          height: 3.75rem;
         }
 
         &.slick-disabled {
@@ -188,14 +179,14 @@
       &.slick-prev {
         left: calc(50% - 1.25rem);
         background-image: url("../images/carousel-arrow-left.svg");
-        @media screen and (min-width: 960px) {
+        @media screen and (min-width: 768px) {
           left: calc(50% - 2.25rem);
         }
       }
       &.slick-next {
         left: calc(50% + 1.25rem);
         background-image: url("../images/carousel-arrow-right.svg");
-        @media screen and (min-width: 960px) {
+        @media screen and (min-width: 768px) {
           left: calc(50% + 2.25rem);
         }
       }

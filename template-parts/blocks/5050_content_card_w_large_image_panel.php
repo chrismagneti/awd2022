@@ -1,4 +1,4 @@
-<div class="custom-template-module template-part-5050-content-card padding-control<?php echo $args['additionalClasses']; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($args['additionalStyles'] && !get_sub_field("use_jagged_top_divider")) { echo ' style="' . $args['additionalStyles'] . '"'; } ?>>
+<div class="custom-template-module template-part-5050-content-card padding-control<?php echo $args['additionalClasses']; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($args['additionalStyles']) { echo ' style="' . $args['additionalStyles'] . '"'; } ?>>
 
   <div class="center outer">
       

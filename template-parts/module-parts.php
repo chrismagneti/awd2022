@@ -69,10 +69,6 @@
 				$additionalClasses .= ' flip';
 			}
 
-			if( get_sub_field('use_jagged_top_divider') ) {
-				$additionalClasses .= ' top-divider';
-			}
-
 			if( get_sub_field('divider_type') ) {
 				$additionalClasses .= ' top-divider-' . get_sub_field('divider_type');
 			}
@@ -87,7 +83,6 @@
 
 			$next_row_index = get_row_index();
 			$next_row = array_key_exists($next_row_index, $rows) ? $rows[$next_row_index] : false;
-			$next_row_texture = $next_row && array_key_exists('use_jagged_top_divider', $next_row) ? $next_row['use_jagged_top_divider'] : false;
 
 			$additionalStyles = '';
 
@@ -125,11 +120,8 @@
 
 			<?php elseif( get_row_layout() == 'standard_content_module' ): ?>
 
-				<div class="custom-template-module template-part-standard-content padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles && !get_sub_field("use_jagged_top_divider")) { echo ' style="' . $additionalStyles . '"'; } ?>>
+				<div class="custom-template-module template-part-standard-content padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>>
 
-					<?php if( get_sub_field('use_jagged_top_divider') ) { ?>
-						<div class="divider-panel"<?php if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>></div>
-					<?php } ?>
 
 			        <div class="center outer">
 			           
@@ -142,11 +134,8 @@
 
 			<?php elseif( get_row_layout() == 'split_content_module' ): ?>
 
-				<div class="custom-template-module template-part-5050-content padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles && !get_sub_field("use_jagged_top_divider")) { echo ' style="' . $additionalStyles . '"'; } ?>>
+				<div class="custom-template-module template-part-5050-content padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>>
 
-					<?php if( get_sub_field('use_jagged_top_divider') ) { ?>
-						<div class="divider-panel"<?php if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>></div>
-					<?php } ?>
 
 					<div class="center outer">
 							
@@ -168,11 +157,8 @@
 
 			<?php elseif( get_row_layout() == 'split_thirds_content_module' ): ?>
 
-				<div class="custom-template-module template-part-3366-content padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles && !get_sub_field("use_jagged_top_divider")) { echo ' style="' . $additionalStyles . '"'; } ?>>
+				<div class="custom-template-module template-part-3366-content padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>>
 
-					<?php if( get_sub_field('use_jagged_top_divider') ) { ?>
-						<div class="divider-panel"<?php if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>></div>
-					<?php } ?>
 
 			        <div class="center">
 			           
@@ -195,11 +181,8 @@
 
 			<?php elseif( get_row_layout() == 'column_module' ): ?>
 
-				<div class="custom-template-module template-part-column-content padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles && !get_sub_field("use_jagged_top_divider")) { echo ' style="' . $additionalStyles . '"'; } ?>>
+				<div class="custom-template-module template-part-column-content padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>>
 
-					<?php if( get_sub_field('use_jagged_top_divider') ) { ?>
-						<div class="divider-panel"<?php if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>></div>
-					<?php } ?>
 
 			        <div class="center">
 			           
@@ -256,11 +239,8 @@
 
 			<?php elseif( get_row_layout() == 'carousel_module' ): ?>
 
-				<div class="custom-template-module template-part-column-content padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles && !get_sub_field("use_jagged_top_divider")) { echo ' style="' . $additionalStyles . '"'; } ?>>
+				<div class="custom-template-module template-part-column-content padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>>
 
-					<?php if( get_sub_field('use_jagged_top_divider') ) { ?>
-						<div class="divider-panel"<?php if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>></div>
-					<?php } ?>
 
 			        <div class="center">
 
@@ -303,11 +283,8 @@
 
 			<?php elseif( get_row_layout() == 'team_list_module' ): ?>
 
-				<div class="custom-template-module template-part-team-content padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles && !get_sub_field("use_jagged_top_divider")) { echo ' style="' . $additionalStyles . '"'; } ?>>
+				<div class="custom-template-module template-part-team-content padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>>
 
-					<?php if( get_sub_field('use_jagged_top_divider') ) { ?>
-						<div class="divider-panel"<?php if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>></div>
-					<?php } ?>
 
 					<div class="team-background-part" style="background-color: <?php the_sub_field('intro_section_background_color'); ?>"></div>
 
@@ -399,11 +376,8 @@
 
 			<?php elseif( get_row_layout() == 'faq_module' ): ?>
 
-				<div class="custom-template-module template-part-faq padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles && !get_sub_field("use_jagged_top_divider")) { echo ' style="' . $additionalStyles . '"'; } ?>>
+				<div class="custom-template-module template-part-faq padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>>
 
-					<?php if( get_sub_field('use_jagged_top_divider') ) { ?>
-						<div class="divider-panel"<?php if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>></div>
-					<?php } ?>
 
 					<div class="faq-intro">
 	        			<div class="center">
@@ -454,11 +428,8 @@
 
 			<?php elseif( get_row_layout() == 'services_module_short' ): ?>
 
-				<div class="custom-template-module template-part-faq padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles && !get_sub_field("use_jagged_top_divider")) { echo ' style="' . $additionalStyles . '"'; } ?>>
+				<div class="custom-template-module template-part-faq padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>>
 
-					<?php if( get_sub_field('use_jagged_top_divider') ) { ?>
-						<div class="divider-panel"<?php if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>></div>
-					<?php } ?>
 
 					<?php if( get_sub_field('intro_content') ) { ?>
 						<div class="services-content-intro">
@@ -520,11 +491,8 @@
 
 			<?php elseif( get_row_layout() == 'services_module_long' ): ?>
 
-				<div class="custom-template-module template-part-faq padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles && !get_sub_field("use_jagged_top_divider")) { echo ' style="' . $additionalStyles . '"'; } ?>>
+				<div class="custom-template-module template-part-faq padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>>
 
-					<?php if( get_sub_field('use_jagged_top_divider') ) { ?>
-						<div class="divider-panel"<?php if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>></div>
-					<?php } ?>
 
 					<div class="services-content-intro">
 			        	<div class="center">

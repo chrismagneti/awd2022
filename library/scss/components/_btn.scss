@@ -25,9 +25,9 @@
 
   &:hover,
   &:focus {
-    outline: 2px solid $gray3;
-    background-color: white;
-    color: $awd-navy;
+    outline: 2px solid $gray2;
+    background-color: #F5F5F5;
+    color: $awd-green;
     border-color: transparent;
   }
   @media screen and (min-width: 960px){

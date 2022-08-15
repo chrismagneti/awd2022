@@ -112,3 +112,61 @@ UTILITIES
 		display: none;
 	}
 }
+
+
+
+
+/** Utilities */
+.hidden { display: none; }
+.block { display: block; }
+.inline-block { display: inline-block; }
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+
+.md\:hidden { 
+  @media screen and (min-width: 768px){ display: none; }
+ }
+.md\:block { 
+  @media screen and (min-width: 768px){ display: block; }
+}
+.md\:inline-block { 
+  @media screen and (min-width: 768px){ display: inline-block; }
+}
+.md\:flex { 
+  @media screen and (min-width: 768px){ display: flex; }
+}
+.md\:inline-flex { 
+  @media screen and (min-width: 768px){ display: inline-flex; }
+}
+
+.lg\:hidden { 
+  @media screen and (min-width: 960px){ display: none; }
+ }
+.lg\:block { 
+  @media screen and (min-width: 960px){ display: block; }
+}
+.lg\:inline-block { 
+@media screen and (min-width: 960px){ display: inline-block; }
+}
+.lg\:flex { 
+  @media screen and (min-width: 960px){ display: flex; }
+}
+.lg\:inline-flex { 
+  @media screen and (min-width: 960px){ display: inline-flex; }
+}
+
+.xl\:hidden { 
+  @media screen and (min-width: 1100px){ display: none; }
+}
+.xl\:block { 
+  @media screen and (min-width: 1100px){ display: block; }
+}
+.xl\:inline-block { 
+  @media screen and (min-width: 1100px){ display: inline-block; }
+}
+.xl\:flex { 
+  @media screen and (min-width: 1100px){ display: flex; }
+}
+.xl\:inline-flex { 
+  @media screen and (min-width: 1100px){ display: inline-flex; }
+}

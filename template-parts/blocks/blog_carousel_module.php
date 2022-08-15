@@ -1,5 +1,5 @@
 <?php // debugArgs($args); ?>
-<div class="custom-template-module template-part-blog_carousel_module padding-control<?php echo $args['additionalClasses']; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($args['additionalStyles'] && !get_sub_field("use_jagged_top_divider")) { echo ' style="' . $args['additionalStyles'] . '"'; } ?>>
+<div class="custom-template-module template-part-blog_carousel_module padding-control<?php echo $args['additionalClasses']; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($args['additionalStyles']) { echo ' style="' . $args['additionalStyles'] . '"'; } ?>>
 
   <div class="image-panel aspect-container <?php if($args['backgroundImage'] && isset($args['backgroundImage']['sizes'])){ ?> has-bg<?php } ?>" style="background-image: url(<?php if($args['backgroundImage'] && isset($args['backgroundImage']['sizes'])){ echo $args['backgroundImage']['sizes']['2048x2048']; } ?>); background-size: cover;background-repeat: no-repeat; background-position: center;">
     <div class="center outer">
@@ -30,7 +30,7 @@
                   <?php echo get_the_date('m.d.y', $thePost->ID); ?>
                 </p>
                 <div class="post-content body-l">
-                  <?php echo $thePost->post_content; ?>
+                  <?php echo truncateString($thePost->post_content, 200); ?>
                 </div>
                 <a href="<?php echo get_permalink($thePost->ID); ?>" class="btn">Read More</a>
               </div>

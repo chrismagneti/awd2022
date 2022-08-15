@@ -25,6 +25,10 @@
     padding: .5rem 0;
     display: flex;
     justify-content: flex-end;
+    a {
+      color: white;
+      font-weight: 400;
+    }
     @media screen and (min-width: 960px){
       padding: 1rem 0;
     }
@@ -150,6 +154,15 @@
             &:after {
               transform: translate3d(-50%,-50%,0) scaleY(0);
               transition: all 0.1s ease-out;
+            }
+          }
+        }
+
+        &.current-menu-item {
+          a {
+            color: $awd-arctic;
+            &:hover {
+              color: $white;
             }
           }
         }

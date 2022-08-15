@@ -120,8 +120,8 @@ add_shortcode( 'circlequote', 'circlequote_func' );
 /*
  * Register Classes post type
 */
-add_action( 'init', 'prefix_register_post_type' );
-function prefix_register_post_type() {
+add_action( 'init', 'awd_register_classes_post_type' );
+function awd_register_classes_post_type() {
 	$args = array(
 		'label' => 'Classes',
 		'public' => false,
@@ -133,6 +133,25 @@ function prefix_register_post_type() {
 		'menu_icon' => 'dashicons-format-video' // See Icon --> https://developer.wordpress.org/resource/dashicons/#format-video
 	);
 	register_post_type( 'awd_classes', $args );
+}
+
+/*
+ * Register Leadership post type
+*/
+add_action( 'init', 'awd_register_team_post_type' );
+function awd_register_team_post_type() {
+	$args = array(
+		'label' => 'Team',
+		'public' => false,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'has_archive' => false,
+		'rewrite' => true,
+		'query_var' => true,
+		'supports' => ['title', 'thumbnail', 'editor'],
+		'menu_icon' => 'dashicons-businessperson' // See Icon --> https://developer.wordpress.org/resource/dashicons/#format-video
+	);
+	register_post_type( 'awd_team', $args );
 }
 
 function getClasses($numberposts = -1, $orderBy = 'meta_value', $metaKey = 'class_date', $order = 'DESC') {
@@ -164,4 +183,23 @@ if( function_exists('acf_add_options_page') ) {
 	
 	acf_add_options_page();
 	
+}
+
+function truncateString($string, $your_desired_width) {
+  $parts = preg_split('/([\s\n\r]+)/', $string, null, PREG_SPLIT_DELIM_CAPTURE);
+  $parts_count = count($parts);
+
+  $length = 0;
+  $last_part = 0;
+  for (; $last_part < $parts_count; ++$last_part) {
+    $length += strlen($parts[$last_part]);
+    if ($length > $your_desired_width) { 
+			$updatedParts = array_slice($parts, 0, $last_part);
+			$updatedParts[] = '...';
+			$parts = $updatedParts;
+			break; 
+		}
+  }
+
+  return implode($parts);
 }

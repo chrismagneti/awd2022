@@ -2,3 +2,8 @@ node_modules
 **/*/.DS_Store
 .DS_Store
 .sass-cache
+
+// ignoring files that get generated. these get created the first time grunt is run
+library/css/style.css
+library/css/style.css.map
+library/css/style.min.css

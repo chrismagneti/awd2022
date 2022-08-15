@@ -1,4 +1,4 @@
-<div class="custom-template-module template-part-classes_carousel_module padding-control<?php echo $args['additionalClasses']; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($args['additionalStyles'] && !get_sub_field("use_jagged_top_divider")) { echo ' style="' . $args['additionalStyles'] . '"'; } ?>>
+<div class="custom-template-module template-part-classes_carousel_module padding-control<?php echo $args['additionalClasses']; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($args['additionalStyles']) { echo ' style="' . $args['additionalStyles'] . '"'; } ?>>
 
 <div class="image-panel aspect-container <?php if($args['backgroundImage'] && isset($args['backgroundImage']['sizes'])){ ?> has-bg<?php } ?>" style="background-image: url(<?php if($args['backgroundImage'] && isset($args['backgroundImage']['sizes'])){ echo $args['backgroundImage']['sizes']['2048x2048']; } ?>); background-size: cover;background-repeat: no-repeat; background-position: center;">
     <div class="center outer">
@@ -21,7 +21,7 @@
               <p class="body-l mb-0"><?php echo get_field('location', $class->ID); ?></p>
               <p class="body-l"><?php echo get_field('class_date', $class->ID); ?></p>
               <p class="body-l">
-              <?php echo $class->post_content; ?>
+              <?php echo truncateString($class->post_content, 200); ?>
               </p>
               <a href="<?php echo get_field('url', $class->ID); ?>" class="btn">Register</a>
             </div>
