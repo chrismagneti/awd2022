@@ -392,9 +392,14 @@ p {
   position: relative;
   margin-bottom: 25px;
   @include sans-serif-400;
-  font-size: 18px;
+  font-size: 1rem;
   line-height: 145%;
   color: $gray1;
+  
+  @media screen and (min-width: 960px){
+    font-size: 18px;
+    
+  }
 
   &:last-child {
     margin-bottom: 0;
@@ -469,6 +474,12 @@ p code {
   letter-spacing: 2px;
   text-decoration: none;
   @extend .din-bold;
+  outline: none;
+  &:focus,
+  &:active {
+    outline: none !important; // button goes multi-line sometimes and looks whack with an outline
+    text-decoration: underline;
+  }
   &--sm {
     font-size: .75rem;
   }
@@ -477,6 +488,7 @@ p code {
 .link-with-icon {
   display: inline-flex;
   align-items: center;
+  text-decoration: none;
   &:hover {
     svg {
       transform: translate3d(.5rem,0,0);
@@ -492,6 +504,22 @@ p code {
     width: 100%;
     transform: translate3d(0,0,0);
   }
+
+  &.serif {
+    @include serif-700;
+    font-style: italic;
+  }
+
+  &.green {
+    color: $awd-green !important;
+    .link-text {
+      color: $awd-green !important;
+    }
+    svg {
+      fill: $awd-green !important;
+    }
+  }
+  
 }
 
 .link-icon {

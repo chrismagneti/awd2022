@@ -152,32 +152,6 @@ jQuery(document).ready(function ($) {
     });
   }
 
-  // team member expand
-  $(function () {
-    var showMoreTeam = $(".expand-team-bio");
-
-    showMoreTeam.on("click", function (evt) {
-      evt.preventDefault();
-
-      var openLabel = $(this);
-      var bottomPart = $(this)
-        .parent()
-        .parent()
-        .parent()
-        .parent()
-        .parent()
-        .find(".part-bottom");
-
-      if (bottomPart.is(":visible")) {
-        bottomPart.stop().slideUp(200);
-        openLabel.html("READ MORE");
-      } else {
-        bottomPart.stop().slideDown(200);
-        openLabel.html("CLOSE");
-      }
-    });
-  });
-
   // faq expand
   $(function () {
     var showFAQ = $(".template-faq-expand-wrapper .q-part");

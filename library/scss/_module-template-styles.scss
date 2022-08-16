@@ -105,7 +105,8 @@ body.page-template-template-modulebased_custom #main-content {
   .custom-template-module.dark-mode .h-2xl,
   .custom-template-module.dark-mode .h-3xl,
   .custom-template-module.dark-mode .link-text,
-  .custom-template-module.dark-mode .link-with-icon {
+  .custom-template-module.dark-mode .link-with-icon,
+  .custom-template-module.dark-mode .dark-mode-target {
     color: #FFF !important;
     fill: #FFF !important;// in case any children icons are looking to inherit
   }

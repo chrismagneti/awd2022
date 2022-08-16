@@ -40,13 +40,19 @@ function magneti_enqueue_scripts() {
 	//register
     wp_register_style( 'template-stylesheet', get_theme_file_uri() . '/library/css/style.css', array(), '1.5', 'all' );
     wp_register_script( 'slick', THEME_URL.'/library/js/slick/slick.min.js', array(), '1.0' );
-	wp_register_script( 'lib', THEME_URL.'/library/js/lib.js', array( 'jquery' ), '1.1' );
+		wp_register_script( 'lib', THEME_URL.'/library/js/lib.js', array( 'jquery' ), '1.1' );
+		wp_register_script( 'fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js', array( 'jquery' ), '4.0' );
+    wp_register_style( 'fancybox-styles', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css', array(), '4.0', 'all' );
 
 	//enqueue
 	wp_enqueue_style( 'template-stylesheet' );
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'slick' );
 	wp_enqueue_script( 'lib' );
+
+	// Fancybox
+	wp_enqueue_style( 'fancybox-styles' );
+	wp_enqueue_script( 'fancybox' );
 	
 	//localize
 	/*

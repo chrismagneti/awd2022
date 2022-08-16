@@ -5,8 +5,7 @@
   @include thetransition;
   border-radius: 100rem;
   background: $awd-green;
-  outline: 2px solid $awd-navy;
-  outline-offset: .125rem;
+  box-shadow: 0px 0px 2px 2px white; // because curved outlines were appearing as boxes on mobile safari
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -19,6 +18,11 @@
   cursor: pointer;
   -webkit-appearance: none; 
   
+  @media screen and (min-width: 960px){
+    outline: 2px solid $awd-navy;
+    outline-offset: .125rem;
+    box-shadow: none;
+  }
   // left this out because there is a lot of wide button text
   // white-space: nowrap;
 

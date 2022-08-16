@@ -283,13 +283,13 @@
 
 			<?php elseif( get_row_layout() == 'team_list_module' ): ?>
 
-				<div class="custom-template-module template-part-team-content padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>>
+				<div class="custom-template-module template-part-team_list padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>>
 
 
 					<div class="team-background-part" style="background-color: <?php the_sub_field('intro_section_background_color'); ?>"></div>
 
 	        		<div class="team-intro-content-wrapper" style="background-color: <?php echo get_sub_field('intro_section_background_color'); ?>">
-	        			<div class="center">
+	        			<div class="center outer">
 		        			<?php if( get_sub_field('intro_section_content') ) { ?>
 		        				<?php the_sub_field('intro_section_content'); ?>
 		        			<?php } ?>
@@ -297,77 +297,106 @@
 	        		</div>
 
 			        <div class="template-team-expand-wrapper">
-			        	<div class="center">
+			        	<div class="center outer">
 
-			        		<?php if( have_rows('team_members') ):
-			        			while( have_rows('team_members') ) : the_row(); ?>
+									<?php $teamIndex = 0; ?>
 
-			        				<div class="a-team-member">
-			        					<div class="part-top">
-			        						<?php if(get_sub_field('team_member_image')) { ?>
-			        							<div class="split-part">
-				        							<div class="part part-left">
-				        								<div class="image-wrap">
-				        									<?php $teamImage = get_sub_field('team_member_image'); ?>
-				        									<img src="<?php echo $teamImage['url']; ?>" alt="<?php echo $teamImage['alt']; ?>" />
-				        								</div>
-				        							</div>
+			        		<?php if( have_rows('team_members') ): ?>
 
-				        							<div class="part part-right team-content-part">
-				        								<?php if(get_sub_field('name')) { ?>
-				        									<div class="line1 body-2xl black"><?php the_sub_field('name'); ?></div>
-				        								<?php } ?>
-				        								<?php if(get_sub_field('sub_title')) { ?>
-				        									<p class="upper line2"><?php the_sub_field('sub_title'); ?></p>
-				        								<?php } ?>
-				        								<?php if(get_sub_field('bio_excerpt')) { ?>
-				        									<div class="line3"><?php the_sub_field('bio_excerpt'); ?></div>
-				        								<?php } ?>
-				        							</div>
-				        						</div>
-				        					<?php } else { ?>
-				        						<div class="no-split-wrap team-content-part">
-				        							<?php if(get_sub_field('name')) { ?>
-			        									<div class="line1 body-2xl black"><?php the_sub_field('name'); ?></div>
-			        								<?php } ?>
-			        								<?php if(get_sub_field('sub_title')) { ?>
-			        									<p class="upper line2"><?php the_sub_field('sub_title'); ?></p>
-			        								<?php } ?>
-			        								<?php if(get_sub_field('bio_excerpt')) { ?>
-			        									<div class="line3"><?php the_sub_field('bio_expert'); ?></div>
-			        								<?php } ?>
-				        						</div>
-				        					<?php } ?>
+										<div class="team-members-grid">
 
-				        					<div class="bottom-stripe">
-				        						<div class="split-part">
-				        							<div class="part part-left"></div>
-				        							<div class="part part-right">
-						        						<?php if(get_sub_field('full_bio_left')) { ?>
-						        							<div class="expand-team-bio">READ MORE</div>
-						        						<?php } ?>
-						        					</div>
-						        				</div>
-				        					</div>
-			        					</div>
+											<?php while( have_rows('team_members') ) : the_row(); ?>
+	
+												<div class="team-member">
+	
+													<?php 
+														get_template_part( 
+															'template-parts/components/team-member-image', 
+															null, // name
+															[ 'teamImage' => get_sub_field('team_member_image') ]
+														); 
+													?>
+	
+													<div class="content" data-team-member="<?php echo $teamIndex; ?>">
+														<?php if(get_sub_field('name')) { ?>
+															<div class="team-member-name dark-mode-target"><?php the_sub_field('name'); ?></div>
+														<?php } ?>
+	
+														<?php if(get_sub_field('sub_title')) { ?>
+															<p class="team-member-title <?php if(get_sub_field('bio_excerpt')) { ?> has-excerpt <?php } ?>"><?php the_sub_field('sub_title'); ?></p>
+														<?php } ?>
+														<?php if(get_sub_field('bio_excerpt')) { ?>
+															<div class="team-member-excerpt <?php if(get_sub_field('full_bio_left')) { ?> has-bio <?php } ?>"><?php the_sub_field('bio_excerpt'); ?></div>
+														<?php } ?>
+	
+														<?php if(get_sub_field('full_bio_left')) { ?>
+															<a 
+																class="link-with-icon serif green"
+	
+																href="#"
+																data-src="#team-member-<?php echo $teamIndex; ?>"
+																data-fancybox
+																data-type="clone"
+																data-preload="false"
+																data-width="640"
+																data-height="480"
+																
+															>
+																<span class="link-text">Read Bio</span>
+																<svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"/></svg>
+															</a>
+														<?php } ?>
+													</div>
+													
+												</div>
+	
+												<div class="modal-content" id="team-member-<?php echo $teamIndex; ?>">
+													<div class="center">
+														<div class="team-member">
+															<div class="top">
+																<?php 
+																	get_template_part( 
+																		'template-parts/components/team-member-image', 
+																		null, // name
+																		[ 'teamImage' => get_sub_field('team_member_image') ]
+																	); 
+																?>
+																<div class="content">
+																	<?php if(get_sub_field('name')) { ?>
+																		<div class="team-member-name dark-mode-target"><?php the_sub_field('name'); ?></div>
+																	<?php } ?>
+																	<?php if(get_sub_field('sub_title')) { ?>
+																		<p class="team-member-title <?php if(get_sub_field('full_bio_left')) { ?> has-bio <?php } ?>"><?php the_sub_field('sub_title'); ?></p>
+																	<?php } ?>
+																</div>
+															</div>
+	
+															<div class="content" data-team-member="<?php echo $teamIndex; ?>">
+																
+	
+																<?php if(get_sub_field('full_bio_left')) { ?>
+																	<div class="body">
+																	<?php echo get_sub_field('full_bio_left'); ?>
+																	</div>
+																<?php } ?>
+	
+																<?php if(get_sub_field('link_url')) { ?>
+																	<a href="<?php echo get_sub_field('link_url'); ?>" class="nav-text dark-mode-target">
+																	<?php echo get_sub_field('link_text'); ?>
+																	</a>
+																<?php } ?>
+															</div>
+														</div>
+													</div>
+												</div>
+	
+												<?php $teamIndex++; ?>
+												
+											<?php endwhile; ?>
 
-			        					<?php if(get_sub_field('full_bio_left')) { ?>
-				        					<div class="part-bottom">
-				        						<div class="split-part">
-				        							<div class="part part-left">
-				        								<?php the_sub_field('full_bio_left'); ?>
-				        							</div>
-
-				        							<div class="part part-right">
-				        								<?php the_sub_field('full_bio_right'); ?>
-				        							</div>
-				        						</div>
-				        					</div>
-			        					<?php } ?>
-			        				</div>
-
-			        			<?php endwhile;
-			        		endif; ?>
+										</div>
+										
+			        		<?php endif; ?>
 
 			        	</div>
 			        </div>
