@@ -624,7 +624,8 @@
 							// variables going into the template part
 							'additionalClasses' => $additionalClasses, 
 							'additionalStyles' => $additionalStyles,
-							'backgroundImage' => get_sub_field('background_image')
+							'backgroundImage' => get_sub_field('background_image'),
+							'cardRounding' => get_sub_field('rounding'),
 						]
 					); 
 				?>

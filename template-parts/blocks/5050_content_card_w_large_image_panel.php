@@ -1,18 +1,39 @@
-<div class="custom-template-module template-part-5050-content-card padding-control<?php echo $args['additionalClasses']; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($args['additionalStyles']) { echo ' style="' . $args['additionalStyles'] . '"'; } ?>>
+<?php
+$moduleClasses = ' ';
+$imageFirst = false;
+// debugArgs($args);
+if(
+  get_sub_field('module_layout') && 
+  get_sub_field('module_layout') == 'image-first') {
+    $moduleClasses .= ' image-first';
+    $imageFirst = true;
+}
+if(
+  !get_sub_field('main_content_right') || 
+  !get_sub_field('main_content_left')){
+  $moduleClasses .= ' single-col';
+}
+
+?>
+<div class="custom-template-module template-part-5050-content-card padding-control<?php echo $args['additionalClasses']; ?> <?php echo $moduleClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($args['additionalStyles']) { echo ' style="' . $args['additionalStyles'] . '"'; } ?>>
 
   <div class="center outer">
       
-    <div class="rounded-card rounded-tr-bl">
+    <div class="rounded-card <?php if($args['cardRounding']){ echo 'rounded-' . $args['cardRounding']; } ?>">
 
       <div class="template-split-5050-card-wrapper">
 
-        <div class="a-columner column1">
-          <?php the_sub_field('main_content_left'); ?>
-        </div>
+        <?php if(get_sub_field('main_content_left')): ?>
+          <div class="a-columner column1">
+            <?php the_sub_field('main_content_left'); ?>
+          </div>
+        <?php endif; ?>
 
-        <div class="a-columner column2">
-          <?php the_sub_field('main_content_right'); ?>
-        </div>
+        <?php if(get_sub_field('main_content_right')): ?>
+          <div class="a-columner column2">
+            <?php the_sub_field('main_content_right'); ?>
+          </div>
+        <?php endif; ?>
 
       </div>
     

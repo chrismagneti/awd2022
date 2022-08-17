@@ -23,7 +23,9 @@
               <p class="body-l">
               <?php echo truncateString($class->post_content, 200); ?>
               </p>
+              <div class="button-wrap">
               <a href="<?php echo get_field('url', $class->ID); ?>" class="btn">Register</a>
+              </div>
             </div>
           <?php endforeach; ?>
         </div>
