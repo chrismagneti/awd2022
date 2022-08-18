@@ -1,0 +1,65 @@
+.magneti-custom-template-wrapper {
+  .template-part-alternating-sections {
+    > .center {
+      @media screen and (max-width: 959px){
+      }
+    }
+    .alternating-section-inner {
+      display: flex;
+      flex-direction: column;
+      .rounded-card {
+        max-width: 33.75rem;
+        margin-top: -15vw;
+        position: relative;
+        align-self: flex-end;
+        @media screen and (min-width: 960px){
+          margin-top: -18rem;
+        }
+      }
+      .image-panel-wrapper {
+        overflow: hidden;
+        margin: 0 -19px 0 -62px;
+        @media screen and (min-width: 960px){
+          width: 100%;
+          margin: 0;
+          max-width: 80%;
+          
+        }
+      }
+      .image-panel {
+        &:after {
+          padding-bottom: 69.23%;
+        }
+      }
+    }
+    &.image-left {
+      .rounded-card {
+        @media screen and (min-width: 960px){
+          align-self: flex-end;
+        }
+      }
+      .image-panel-wrapper {
+        @media screen and (min-width: 960px){
+          border-radius: 8rem 0 8rem 0;
+        }
+      }
+    }
+    &.image-right {
+      .rounded-card {
+        @media screen and (min-width: 960px){
+          align-self: flex-start;
+        }
+      }
+      .image-panel-wrapper {
+        @media screen and (min-width: 960px){
+          align-self: flex-end;
+        }
+      }
+      .image-panel-wrapper {
+        @media screen and (min-width: 960px){
+          border-radius: 0 8rem 0 8rem;
+        }
+      }
+    }
+  }
+}

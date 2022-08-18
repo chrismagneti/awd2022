@@ -55,51 +55,6 @@
       @media screen and (min-width: 960px){
         position: static; // we need the controls which are housed within to take their positioning based on this container's parent, so that they can be centered on it, not this
       }
-      .a-slide {
-        padding: .25rem; // to prevent the corners of the button in the button left from being cut off
-      }
-      .a-slide-inner {
-        @media screen and (min-width: 768px){
-          padding-right: 3rem;
-        }
-  
-        @media screen and (min-width: 1200px){
-          padding-right: 7rem;
-          
-        }
-      }
-      .post-content-wrapper { 
-        padding: 3rem 0;
-        @media screen and (min-width: 768px){
-          padding: 2rem 1rem;
-        }
-        @media screen and (min-width: 1200px){
-          padding: 3rem 1.5rem;
-        }
-        .post-title {
-          margin-bottom: 1rem;
-          @media screen and (min-width: 960px){
-            height: 100px;
-          }
-        }
-        .btn {
-          margin-top: 4rem;
-        }
-      }
-    }
-
-  
-    .post-thumbnail-wrapper {
-      display: block;
-      overflow: hidden;
-      border-radius: 2rem 0 2rem 0;
-      transition: opacity .3s ease-in;
-      &:hover {
-        opacity: .75;
-      }
-      @media screen and (min-width: 960px){
-        border-radius: 5rem 0 5rem 0;
-      }
     }
     
     .slick-dots {

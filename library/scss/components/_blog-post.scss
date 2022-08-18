@@ -1,0 +1,46 @@
+.blog-post {
+  padding: .25rem; // to prevent the corners of the button in the button left from being cut off
+  &-inner {
+    @media screen and (min-width: 768px){
+      padding-right: 3rem;
+    }
+
+    @media screen and (min-width: 1200px){
+      padding-right: 7rem;
+      
+    }
+  }
+  .post-content-wrapper { 
+    padding: 3rem 0;
+    @media screen and (min-width: 768px){
+      padding: 2rem 1rem;
+    }
+    @media screen and (min-width: 1200px){
+      padding: 3rem 1.5rem;
+    }
+    .blog-post-title {
+      margin-bottom: 1rem;
+    }
+    .btn {
+      margin-top: 4rem;
+    }
+  }
+  .post-thumbnail-wrapper {
+    display: block;
+    overflow: hidden;
+    border-radius: 2rem 0 2rem 0;
+    transition: opacity .3s ease-in;
+    &:hover {
+      opacity: .75;
+    }
+    @media screen and (min-width: 960px){
+      border-radius: 5rem 0 5rem 0;
+    }
+    img {
+      position: relative;
+      display: block;
+      height: auto;
+      max-width: 100%;
+    }
+  }
+}

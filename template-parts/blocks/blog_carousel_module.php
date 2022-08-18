@@ -16,26 +16,15 @@
     <?php if(isset($args['selectedPosts']) && $args['selectedPosts']): ?>
       <div class="blog-carousel">
         <?php foreach($args['selectedPosts'] as $thePost): ?>
-          <div class="a-slide">
-            <div class="a-slide-inner">
-              <a href="<?php echo get_permalink($thePost->ID); ?>" class="post-thumbnail-wrapper">
-                <?php echo get_the_post_thumbnail($thePost->ID); ?>
-              </a>
-              <div class="post-content-wrapper">
-                <h2 class="post-title green"><?php echo $thePost->post_title; ?></h2>
-                <p class="post-content body-l mb-0">
-                  <?php echo get_the_author_meta('display_name', $thePost->post_author); ?>
-                </p>
-                <p class="post-content body-l">
-                  <?php echo get_the_date('m.d.y', $thePost->ID); ?>
-                </p>
-                <div class="post-content body-l">
-                  <?php echo truncateString($thePost->post_content, 200); ?>
-                </div>
-                <a href="<?php echo get_permalink($thePost->ID); ?>" class="btn">Read More</a>
-              </div>
-            </div>
-          </div>
+          <?php 
+            get_template_part( 
+              'template-parts/components/blog-post', 
+              null, // name
+              [
+                'thePost' => $thePost
+              ]
+            ); 
+          ?>
         <?php endforeach; ?>
       </div>
     <?php else: ?>

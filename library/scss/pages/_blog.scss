@@ -1,0 +1,85 @@
+body.blog {
+  background-color: $awd-navy;
+  h1, h2, h3, h4, h5, h6, a, p {
+    color: $white;
+  }
+  .blog-posts-grid {
+    margin: 4rem 0;
+    @media screen and (min-width: 768px){
+      margin: 5rem 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 2rem;
+      column-gap: 2rem;
+    }
+    @media screen and (min-width: 960px){
+      margin: 8rem 0;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 10rem;
+      column-gap: 3rem;
+    }
+    .blog-post {
+      margin-bottom: 5.675rem;
+
+      
+
+      @media screen and (min-width: 768px){
+        margin-bottom: 0;
+        display: flex; // make the child take this containers full height
+      }
+      &-inner {
+        padding-right: 0;
+        @media screen and (min-width: 768px){
+          display: flex; // make the child take this containers full height
+          flex-direction: column;
+        }
+      }
+      &-title {
+        font-weight: 300;
+        margin-bottom: 2rem;
+        font-size: 1.375rem;
+        @media screen and (min-width: 768px){
+          font-size: 2rem;
+        }
+      }
+      &-author,
+      &-date {
+        font-weight: 700;
+        font-size: 1rem;
+        @media screen and (min-width: 768px){
+          font-size: 1.25rem;
+        }
+      }
+      &-date {
+        @media screen and (min-width: 768px){
+          margin-bottom: 2.5rem;
+        }
+      }
+      &-content {
+        @media screen and (min-width: 768px){
+          margin-bottom: 2rem;
+        }
+        @media screen and (min-width: 960px){
+          margin-bottom: 3.125rem;
+        }
+      }
+      .post-content-wrapper {
+        margin-top: 1.5rem;
+        padding: 0;
+        @media screen and (min-width: 768px){
+          margin-top: 3.125rem;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+        }
+        .btn {
+          margin-top: 2.25rem;
+          @media screen and (min-width: 768px){
+            margin-top: auto; 
+            align-self: flex-start;
+          }
+        }
+      }
+    }
+  }
+}

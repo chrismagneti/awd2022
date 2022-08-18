@@ -1,0 +1,54 @@
+.awd-accordion {
+  &-title {}
+  &-toggle {
+    @include serif-700;
+    color: $awd-green;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    @media screen and (min-width: 960px){
+      display: none;
+    }
+    .icon {
+      position: relative;
+      height: 14px;
+      width: 14px;
+      display: block;
+      &:before,
+      &:after {
+        @include pseudo;
+        width: 2px;
+        height: 14px;
+        top: 50%;
+        left: 50%;
+        background-color: $awd-green;
+      }
+      &:before {
+        transform: translate3d(-50%,-50%,0);
+      }
+      &:after {
+        transform: translate3d(-50%,-50%,0) rotate(90deg);
+      }
+    }
+    &.open {
+      .icon {
+        &:before {
+          transform: translate3d(-50%,-50%,0) rotate(90deg);
+        }
+      }
+    }
+  }
+  &-content {
+    display: none;
+    @media screen and (min-width: 960px){
+      display: block;
+    }
+    p {
+      padding-top: 2rem;
+      @media screen and (min-width: 960px){
+        padding-top: 0;
+      }
+    }
+  }
+}

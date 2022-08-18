@@ -13,7 +13,7 @@
   <div class="center outer">
     
     <?php if(isset($args['classes']) && $args['classes']): ?>
-      <div class="rounded-card rounded-tr-bl">
+      <div class="rounded-card rounded-tl-br">
         <div class="class-carousel">
           <?php foreach($args['classes'] as $class): ?>
             <div class="a-slide">

@@ -7,7 +7,7 @@ $socials = get_field('social_icons', 'option');
 <footer id="footer">
 	<div class="footer-top">
 
-		<div class="center outer">
+		<div class="center outer wide">
 
 			<a href="/" class="footer-logo-wrap" title="to home page">
 				<img src="<?php bloginfo('template_directory'); ?>/library/images/main-logo.png" alt="I.M. Financial, LLC" />
@@ -63,7 +63,7 @@ $socials = get_field('social_icons', 'option');
 	</div>
 
 	<div class="footer-bottom">
-		<div class="center outer">
+		<div class="center outer wide">
 
 		
 		<?php the_field('paragraph_3', 'option'); ?>

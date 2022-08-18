@@ -51,6 +51,24 @@ jQuery(document).ready(function ($) {
     });
   });
 
+  // awd-accordion functionality
+  $(function () {
+    var trigger = $(".awd-accordion-toggle");
+
+    trigger.on("click", function (e) {
+      e.preventDefault();
+      if ($(this).hasClass("open")) {
+        $(this).removeClass("open");
+      } else {
+        $(this).addClass("open");
+      }
+      $(this)
+        .closest(".awd-accordion")
+        .find(".awd-accordion-content")
+        .slideToggle();
+    });
+  });
+
   // fixed nav scroll
   $(document).ready(function () {
     $(document).scroll(function () {

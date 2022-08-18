@@ -686,6 +686,24 @@
 						]
 					); 
 				?>
+			
+
+			<?php elseif( get_row_layout() == 'alternating_sections_module' ): ?>
+
+				<?php 
+					get_template_part( 
+						'template-parts/blocks/alternating_sections_module', 
+						null, // name
+						[
+							// variables going into the template part
+							'additionalClasses' => $additionalClasses, 
+							'additionalStyles' => $additionalStyles,
+							'image' => get_sub_field('image'),
+							'content' => get_sub_field('main_content'),
+							'moduleLayout' => get_sub_field('module_layout'),
+						]
+					); 
+				?>
 
 			
 			<?php else: ?>

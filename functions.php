@@ -122,6 +122,16 @@ function circlequote_func( $atts ) {
 }
 add_shortcode( 'circlequote', 'circlequote_func' );
 
+// [accordion text="message here"]Content goes here[/accordion]
+function awd_accordion_shortcode_func( $atts, $content = null ) {
+	$a = shortcode_atts( array(
+		'title' => 'Title Goes Here',
+	), $atts );
+
+	return "<div class='awd-accordion'><h3 class='awd-accordion-title h-2xl'>{$a['title']}</h3><a href='#' class='awd-accordion-toggle'>Read More<span class='icon'></span></a><div class='awd-accordion-content'><p>{$content}</p></div></div>";
+}
+add_shortcode( 'accordion', 'awd_accordion_shortcode_func' );
+
 
 /*
  * Register Classes post type
