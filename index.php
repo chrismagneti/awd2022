@@ -11,7 +11,7 @@
     <div class="custom-template-module gradient-green-to-navy template-part-hero has-bg dark-mode"<?php if($args['additionalStyles']) { echo ' style="' . $args['additionalStyles'] . '"'; } ?>>
 
       <div class="hero-img-container">
-        <div class="aspect-container">
+        <div class="aspect-container" style="background-image: url(<?php echo $imageUrl; ?>); background-size: cover; background-position: center;">
           <div class="center wide">
             
             <div class="normal-hero-wrap">
@@ -19,7 +19,6 @@
             </div>
 
           </div>
-          <img class="bg-image" src="<?php echo $imageUrl; ?>" alt="">
         </div>
       </div>
     </div>

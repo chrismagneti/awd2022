@@ -1,7 +1,7 @@
 <div class="custom-template-module gradient-green-to-navy template-part-hero<?php echo $args['additionalClasses']; ?>"<?php if($args['additionalStyles']) { echo ' style="' . $args['additionalStyles'] . '"'; } ?>>
     <?php if($args['backgroundImage']){ ?>
       <div class="hero-img-container">
-        <div class="aspect-container">
+        <div class="aspect-container" style="background-image: url(<?php echo $args['backgroundImage']; ?>); background-size: cover; background-position: center;">
           <div class="center wide">
             
             <div class="normal-hero-wrap">
@@ -9,7 +9,6 @@
             </div>
 
           </div>
-          <img class="bg-image" src="<?php echo $args['backgroundImage']; ?>" alt="">
         </div>
       </div>
       <div>

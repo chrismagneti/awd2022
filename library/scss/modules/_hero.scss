@@ -63,15 +63,8 @@
 .template-part-hero {
   @extend .gradient-green-to-navy;
   &.has-bg {
-    .bg-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      z-index: 1;
+    .aspect-container {
       border-radius: 0 0 0 3rem;
-      width: 100%;
       @media screen and (min-width: 960px){
         border-radius: 0 0 0 12rem;
       }
