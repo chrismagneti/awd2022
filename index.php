@@ -42,6 +42,9 @@
 
       <?php endwhile; ?>
     </div>
+
+    <?php the_posts_pagination(['mid_size' => 5, 'prev_next' => false]); ?>
+    
   </div>
   
 </main>
