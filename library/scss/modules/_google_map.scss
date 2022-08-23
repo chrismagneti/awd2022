@@ -1,0 +1,13 @@
+.magneti-custom-template-wrapper {
+  .template-part-google_map_module {
+    #map {
+      height: 400px;
+      @media screen and (min-width: 768px){
+        height: 600px;
+      }
+      @media screen and (min-width: 960px){
+        height: 800px;
+      }
+    }
+  }
+}

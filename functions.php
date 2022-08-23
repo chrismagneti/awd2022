@@ -122,6 +122,34 @@ function circlequote_func( $atts ) {
 }
 add_shortcode( 'circlequote', 'circlequote_func' );
 
+// [socialicons]
+function socialicons_func( $atts ) {
+	$a = shortcode_atts( array(
+	), $atts );
+	$socials = get_field('social_icons', 'option');
+
+	$html = '<div class="social-icons-list"><ul class="social-icons-list-ul">';
+
+	if($socials && count($socials)):
+		
+		foreach($socials as $icon):
+
+			$html .= '<li>';
+			$html .= "<a class='social-icons-list-item' href='" . $icon['url'] . "' title='DesignWealth on " . $icon['destination_name'] . "'>";
+			$html .= $icon['icon'];
+			$html .= "</a>";
+			$html .= '</li>';
+			
+		endforeach;
+	endif;
+	
+	
+	$html .= '</ul></div>';
+
+	return $html;
+}
+add_shortcode( 'socialicons', 'socialicons_func' );
+
 // [accordion text="message here"]Content goes here[/accordion]
 function awd_accordion_shortcode_func( $atts, $content = null ) {
 	$a = shortcode_atts( array(
@@ -146,7 +174,8 @@ function awd_register_classes_post_type() {
 		'has_archive' => false,
 		'rewrite' => true,
 		'query_var' => true,
-		'menu_icon' => 'dashicons-format-video' // See Icon --> https://developer.wordpress.org/resource/dashicons/#format-video
+		'menu_icon' => 'dashicons-format-video', // See Icon --> https://developer.wordpress.org/resource/dashicons/#format-video
+		'supports' => ['title', 'editor', 'thumbnail']
 	);
 	register_post_type( 'awd_classes', $args );
 }

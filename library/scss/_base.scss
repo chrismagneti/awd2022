@@ -105,11 +105,11 @@ img.alignright {
     padding: 0;
   }
 
-  &.outer {
-    @media screen and (max-width: 959px) {
-      padding-left: 62px;
-    }
-  }
+  // &.outer {
+  //   @media screen and (max-width: 959px) {
+  //     padding-left: 62px;
+  //   }
+  // }
 
   &.wide {
     max-width: 1228px;

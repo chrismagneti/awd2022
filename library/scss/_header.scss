@@ -88,7 +88,18 @@
       transform-origin: left top;
     }
     @media screen and (min-width: 960px){
-      margin-right: -1rem
+      margin-right: -1rem;
+    }
+    @media screen and (min-width: 1400px){
+      position: relative;
+      &:after {
+        @include pseudo;
+        background-color: $awd-black;
+        height: 100%;
+        left: 100%;
+        width: 3rem;
+        top: 0;
+      }
     }
     &.shown {
       @media screen and (max-width: 959px){

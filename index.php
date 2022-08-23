@@ -8,7 +8,7 @@
       $img = wp_get_attachment_image_src(get_post_thumbnail_id(get_option('page_for_posts')),'2048x2048');
       $imageUrl = $img[0];
 		?>
-    <div class="custom-template-module gradient-green-to-navy template-part-hero has-bg dark-mode"<?php if($args['additionalStyles']) { echo ' style="' . $args['additionalStyles'] . '"'; } ?>>
+    <div class="custom-template-module gradient-green-to-navy template-part-hero has-bg dark-mode">
 
       <div class="hero-img-container">
         <div class="aspect-container" style="background-image: url(<?php echo $imageUrl; ?>); background-size: cover; background-position: center;">

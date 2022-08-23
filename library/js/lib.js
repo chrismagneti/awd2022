@@ -208,34 +208,47 @@ jQuery(document).ready(function ($) {
     return elemBottom <= docViewBottom && elemTop >= docViewTop;
   }
 
-  $(".class-carousel").slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: true,
-    arrows: true,
-    fade: true,
-    focusOnSelect: true,
-    centerMode: false,
-    infinite: false,
-    autoplay: false,
-    adaptiveHeight: true,
-    // responsive: [
-    //   {
-    //     breakpoint: 767,
-    //     settings: "unslick",
-    //   },
-    //   // You can unslick at a given breakpoint now by adding:
-    //   // settings: "unslick"
-    //   // instead of a settings object
-    // ],
-  });
+  if ($(".class-carousel")) {
+    var slidesToShow = $(".class-carousel").data("slides-to-show");
+    $(".class-carousel").slick({
+      slidesToShow: slidesToShow,
+      slidesToScroll: 1,
+      dots: true,
+      arrows: true,
+      // fade: true, // this causes only 1 slide to show at a time and I can't figure out why. I tried disabling all styling and it didnt change anything...
+      focusOnSelect: true,
+      centerMode: false,
+      infinite: false,
+      autoplay: false,
+      adaptiveHeight: true,
+      responsive: [
+        slidesToShow > 1
+          ? {
+              breakpoint: 959,
+              settings: {
+                slidesToShow: 2,
+              },
+            }
+          : {},
+        slidesToShow > 1
+          ? {
+              breakpoint: 767,
+              settings: "unslick",
+            }
+          : {},
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ],
+    });
+  }
 
   $(".blog-carousel").slick({
     slidesToShow: 2,
     slidesToScroll: 2,
     dots: true,
     arrows: true,
-    // fade: true,
+    // fade: true, // this causes only 1 slide to show at a time and I can't figure out why. I tried disabling all styling and it didnt change anything...
     focusOnSelect: true,
     centerMode: false,
     infinite: true,

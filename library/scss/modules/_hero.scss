@@ -39,6 +39,7 @@
         display: block;
         position: relative;
         padding-bottom: 46%;// for some reason, 56.25 was giving an incorrect aspect ratio... @TODO: Look into this
+        padding-bottom: 56.25%;
         height: 0;
         content: '';
       }
@@ -96,7 +97,7 @@
       margin: -12vw 0 0 0;
     }
     @media screen and (min-width: 1200px){
-      margin: -17vw 0 0 0;
+      margin: -10rem 0 0 0;
     }
     p {
       color: $awd-black;

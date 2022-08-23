@@ -634,7 +634,8 @@
 				
 				<?php 
 					$classes = get_sub_field('classes');
-					if($classes && count($classes) > 1) {
+					$slidesToShow = get_sub_field('slides_to_show');
+					if($classes && count($classes) > $slidesToShow) {
 						$additionalClasses .= ' has-multiple-slides';
 					}
 					get_template_part( 
@@ -645,7 +646,8 @@
 							'classes' => $classes,
 							'additionalClasses' => $additionalClasses, 
 							'additionalStyles' => $additionalStyles,
-							'backgroundImage' => get_sub_field('background_image')
+							'backgroundImage' => get_sub_field('background_image'),
+							'slidesToShow' => $slidesToShow
 						]
 					); 
 				?>
@@ -701,6 +703,19 @@
 							'image' => get_sub_field('image'),
 							'content' => get_sub_field('main_content'),
 							'moduleLayout' => get_sub_field('module_layout'),
+						]
+					); 
+				?>
+
+			<?php elseif( get_row_layout() == 'google_map' ): ?>
+
+				<?php 
+					get_template_part( 
+						'template-parts/blocks/google_map', 
+						null, // name
+						[
+							'additionalClasses' => $additionalClasses, 
+							'additionalStyles' => $additionalStyles,
 						]
 					); 
 				?>

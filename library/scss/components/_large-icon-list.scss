@@ -6,8 +6,9 @@
   .icon-wrapper {
     width: 100%;
     flex: 0 0 4rem;
-    margin-right: 4rem;
+    margin-right: 1.5rem;
     @media screen and (min-width: 960px){
+      margin-right: 4rem;
       flex: 0 0 6rem;
     }
     img {

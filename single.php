@@ -30,7 +30,7 @@
     <div class="single-content-wrapper">
       <h2 class="h-2xl serif single-post-title"><?php the_title(); ?></h2>
       <div class="post-meta">
-      <p class="blog-post-author mb-0">
+        <p class="blog-post-author mb-0">
           <?php echo get_the_author_meta('display_name', $post->post_author); ?>
         </p>
         <p class="blog-post-date">
