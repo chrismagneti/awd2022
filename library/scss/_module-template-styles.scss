@@ -32,12 +32,11 @@ body.page-template-template-modulebased_custom #main-content {
   }
   
   .no-padding-top {
-    padding-top: 1px !important;
+    padding-top: 0 !important;
   }
   
   .no-padding-bottom {
-    padding-bottom: 1px !important;
-    bottom: -1px; // eliminates a 1px gap between modules. This was creating a gray border between two white modules
+    padding-bottom: 0 !important;
   }
   
   .padding-control.add-bottom {
@@ -675,6 +674,29 @@ body.page-template-template-modulebased_custom #main-content {
     .template-part-column-content.column5 .template-column-wrapper {
       grid-column-gap: 40px;
       grid-row-gap: 60px;
+    }
+  }
+}
+
+#contact-page-rounded-card-section,
+#services-page-rounded-card-section,
+#about-page-rounded-card-section {
+  .template-split-5050-card-wrapper {
+    @media screen and (min-width: 768px) and (max-width: 959px){
+      flex-direction: column;;
+    }
+    .column1,
+    .column2 {
+      @media screen and (min-width: 768px) and (max-width: 959px){
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    .column1 {
+      @media screen and (min-width: 768px) and (max-width: 959px){
+        margin-bottom: 3rem;
+      }
     }
   }
 }

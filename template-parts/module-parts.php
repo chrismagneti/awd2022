@@ -720,6 +720,20 @@
 					); 
 				?>
 
+			<?php elseif( get_row_layout() == 'accordion_grid_module' ): ?>
+
+				<?php 
+					get_template_part( 
+						'template-parts/blocks/accordion_grid_module', 
+						null, // name
+						[
+							'additionalClasses' => $additionalClasses, 
+							'additionalStyles' => $additionalStyles,
+							'accordions' => get_sub_field('accordions'), 
+						]
+					); 
+				?>
+
 			
 			<?php else: ?>
 

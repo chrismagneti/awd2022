@@ -1,0 +1,16 @@
+.magneti-custom-template-wrapper {
+  .template-part-accordion-grid {
+    .accordion-grid {
+      display: grid;
+      grid-row-gap: 4rem;
+      @media screen and (min-width: 768px){
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 4rem;
+      }
+      @media screen and (min-width: 960px){
+        grid-row-gap: 6rem;
+        
+      }
+    }
+  }
+}

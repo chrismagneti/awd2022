@@ -18,7 +18,7 @@
 var map;
 
 function initMap() {
-  var hq = { lat: 39.584110, lng: -104.864910 };
+  var hq = { lat: 39.583592474868375, lng: -104.86340773123894 };
   map = new google.maps.Map(document.getElementById("map"), {
     center: hq,
     zoom: 16,
@@ -199,10 +199,11 @@ function initMap() {
       }
     ]
   });
-  const marker = new google.maps.Marker({
+  var marker = new google.maps.Marker({
     position: hq,
-    map: map,
+    map: map
   });
+
 }
 
 window.initMap = initMap;

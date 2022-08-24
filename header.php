@@ -18,7 +18,7 @@
 	<?php //hide iOS browser bar ?>
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 
-	<?php /* <link rel="icon" href="<?php bloginfo('template_directory'); ?>/library/images/favicon.png"> */ ?>
+	<link rel="icon" href="<?php bloginfo('template_directory'); ?>/library/images/favicon.png">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 	<?php /* Fonts */ ?>

@@ -63,7 +63,9 @@
       }
       &:not([data-slides-to-show="1"]){
         .a-slide {
-          margin-bottom: 6rem;
+          &:not(:last-child) {
+            margin-bottom: 6rem;
+          }
           @media screen and (min-width: 768px){
             margin-bottom: 0;
           }

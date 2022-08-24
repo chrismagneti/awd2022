@@ -2,6 +2,7 @@
   background: $awd-navy;
   color: white;
   font-size: .75rem;
+  border-top: 1px solid $awd-denim;
 
   @media screen and (min-width: 960px){
     font-size: .875rem;
@@ -188,6 +189,11 @@
     background-color: $awd-green;
     border-radius: 100%;
     transition: all .3s ease-out;
+
+    @media screen and (min-width: 960px){
+      width: 3rem;
+      height: 3rem;
+    }
     
     &:hover {
       // background: $awd-denim;
@@ -204,5 +210,9 @@
     max-width: 1rem;
     max-height: 1rem;
     fill: white;
+    @media screen and (min-width: 960px){
+      max-width: 1.5rem;
+      max-height: 1.5rem;
+    }
   }
 }

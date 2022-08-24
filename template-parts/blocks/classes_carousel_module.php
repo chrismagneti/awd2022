@@ -28,9 +28,12 @@ $moduleClasses .= " shows-{$slidesToShow}-slides";
             <?php $thumbnailUrl = get_the_post_thumbnail_url($class->ID) ? get_the_post_thumbnail_url($class->ID) : get_stylesheet_directory_uri() . '/library/images/hero-default.jpg'; ?>
             <div class="class-post a-slide">
               <div class="a-slide-inner">
-                <a href="<?php echo get_field('url', $class->ID); ?>" class="post-thumbnail-wrapper">
-                  <div class="aspect-video" style="background-image: url(<?php echo $thumbnailUrl; ?>); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
-                </a>
+                <?php if(!$hasBgImage): ?>
+                  <?php /* only rendering this if there is no bg image in the module, to match the design spec */ ?>
+                  <a href="<?php echo get_field('url', $class->ID); ?>" class="post-thumbnail-wrapper">
+                    <div class="aspect-video" style="background-image: url(<?php echo $thumbnailUrl; ?>); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
+                  </a>
+                <?php endif; ?>
                 <h2 class="class-post-title green"><?php echo truncateString($class->post_title, 80); ?></h2>
                 <p class="class-post-location body-l mb-0"><?php echo get_field('location', $class->ID); ?></p>
                 <p class="class-post-date body-l"><?php echo get_field('class_date', $class->ID); ?></p>
