@@ -3,8 +3,11 @@
 .large-icon-list-row {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
   padding-left: 75px;
+
+  &:not(:last-child){
+    margin-bottom: 2rem;
+  }
   // padding-right: 26px;
   @media screen and (min-width: 768px){
     padding-left: 120px;

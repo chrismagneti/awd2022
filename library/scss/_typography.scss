@@ -297,12 +297,7 @@ h1, h2, h3, h4, h5,
   &.upper {
     text-transform: uppercase;
   }
-
-  &.hw {
-    // @include fa-700;
-    line-height: 90%;
-  }
-
+  
   &.more-top {
     margin-top: 50px !important;
   }

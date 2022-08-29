@@ -34,14 +34,16 @@ add_theme_support( 'post-thumbnails' );
 add_action( 'wp_enqueue_scripts', 'magneti_enqueue_scripts' );
 
 function magneti_enqueue_scripts() {
+
+	$frontEndPackageVersion = '2.1.4';
 	
 	if( is_admin() )
 		return false;
 	
 	//register
-    wp_register_style( 'template-stylesheet', get_theme_file_uri() . '/library/css/style.css', array(), '2.0', 'all' );
+    wp_register_style( 'template-stylesheet', get_theme_file_uri() . '/library/css/style.css', array(), $frontEndPackageVersion, 'all' );
     wp_register_script( 'slick', THEME_URL.'/library/js/slick/slick.min.js', array(), '1.0' );
-		wp_register_script( 'lib', THEME_URL.'/library/js/lib.js', array( 'jquery' ), '2.0' );
+		wp_register_script( 'lib', THEME_URL.'/library/js/lib.js', array( 'jquery' ), $frontEndPackageVersion );
 		wp_register_script( 'fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js', array( 'jquery' ), '4.0' );
     wp_register_style( 'fancybox-styles', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css', array(), '4.0', 'all' );
 
