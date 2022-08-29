@@ -16,14 +16,6 @@
         <div class="center outer">
           <div class="rounded-card rounded-tl-br">
             <?php the_sub_field('additional_content'); ?>
-            <?php if( get_sub_field('button_url') ) { ?>
-              <div class="button-wrap">
-                <a href="<?php the_sub_field('button_url'); ?>" class="btn"<?php if(get_sub_field('button_opens_in_new_tab')) { echo ' target="_blank" rel="noopener noreferrer"'; } ?>><?php the_sub_field('button_text'); ?></a>
-                <?php if( get_sub_field('button_2_url') ) { ?>
-                  <a href="<?php the_sub_field('button_2_url'); ?>" class="btn btn-alt"<?php if(get_sub_field('button_2_opens_in_new_tab')) { echo ' target="_blank" rel="noopener noreferrer"'; } ?>><?php the_sub_field('button_2_text'); ?></a>
-                <?php } ?>
-              </div>
-            <?php } ?>
           </div>
         </div>
       <?php } ?>

@@ -1,16 +1,118 @@
 .class-post {
+  padding: .25rem; // to prevent the corners of the button in the button left from being cut off
+  &-inner {
+    @media screen and (min-width: 768px){
+      // padding-right: 3rem;
+    }
+
+    @media screen and (min-width: 1200px){
+      // padding-right: 7rem;
+      
+    }
+  }
+
   &-title {
-    font-size: 1.625rem;
-    line-height: 1.3;
+    padding-right: 2rem; // title does not seem to fill the whole space horizontally, but the content below does
   }
+
   &-date,
-  &-location {
-    font-size: 1rem;
+  &-author {
+    @include text-body-lg;
   }
+
   &-date {
-    margin-bottom: 1.25rem;
+    margin-bottom: .75rem;
+    @media screen and (min-width: 960px){
+      margin-bottom: 3rem;
+    }
   }
-  &-content {
-    font-size: 1rem;
+  
+  .post-content-wrapper { 
+    @media screen and (min-width: 768px){
+      // padding: 2rem 1rem;
+    }
+    @media screen and (min-width: 1200px){
+      // padding: 3rem 1.5rem;
+    }
+    .class-post-title {
+      margin-bottom: 1rem;
+      @include text-h-2xl-sans-serif;
+      @media screen and (min-width: 960px){
+        font-size: 40px; // special font size to try to prevent the titles from breaking onto three lines
+      }
+    }
+    .class-post-content {
+      margin-bottom: 2rem;
+      @media screen and (min-width: 960px){
+        margin-bottom: 66px;
+      }
+      blockquote, p, li, a {
+        @include text-body;
+      }
+      p {
+      }
+    }
+    .btn {
+      // margin-top: 4rem;
+    }
+  }
+  .post-thumbnail-wrapper {
+    display: block;
+    overflow: hidden;
+    border-radius: $br-small 0 $br-small 0;
+    transition: opacity .3s ease-in;
+    margin-bottom: 1.25rem;
+    &:hover {
+      opacity: .75;
+    }
+    @media screen and (min-width: 768px){
+      margin-bottom: 0;
+      
+    }
+    @media screen and (min-width: 960px){
+      border-radius: $br-md 0 $br-md 0;
+    }
+    img {
+      position: relative;
+      display: block;
+      height: auto;
+      max-width: 100%;
+    }
+    .aspect-video {
+      &:after {
+        @media screen and (min-width: 960px){
+          padding-bottom: 72%;
+        }
+      }
+    }
+  }
+
+  &.a-slide {
+    .class-post-title {
+      margin-bottom: 0;
+    }
+  }
+  
+}
+
+.slick-track {
+  display: flex;
+  .blog-post {
+    display: flex;
+    height: auto;
+    flex-grow: 1;
+    .btn {
+      margin-top: auto;
+    }
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      .post-content-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
   }
 }

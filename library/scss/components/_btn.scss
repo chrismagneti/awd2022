@@ -1,27 +1,35 @@
-
 .btn,
 .gform_button {
   @include serif-700;
   @include thetransition;
-  border-radius: 100rem;
+  border: none;
+  border-radius: 100rem; // keepos the corners fully rounded even if the button goes onto two lines
   background: $awd-green;
-  box-shadow: 0px 0px 2px 2px white; // because curved outlines were appearing as boxes on mobile safari
   display: inline-flex;
   justify-content: center;
   align-items: center;
   text-align: center; // incase it needs to wrap
-  padding: .75rem 2rem;
+  padding: 8px 22px !important;
   color: white;
   text-decoration: none;
   font-weight: 800;
   font-size: 1rem;
+  font-style: italic;
   cursor: pointer;
   -webkit-appearance: none; 
+  // outline: 1px solid $awd-navy;
+  // outline-offset: .125rem;
+  line-height: 1.2 !important;
+  box-shadow: inset 0px 0px 0px 1px $awd-navy, inset 0px 0px 0px 3px $white; // because curved outlines were appearing as boxes on mobile safari
+  @media screen and (min-width: 768px){
+    font-size: 1.2rem;
+    padding: 1rem 2rem !important;
+  }
   
   @media screen and (min-width: 960px){
-    outline: 2px solid $awd-navy;
-    outline-offset: .125rem;
-    box-shadow: none;
+    box-shadow: inset 0px 0px 0px 2px $awd-navy, inset 0px 0px 0px 4px $white; // because curved outlines were appearing as boxes on mobile safari
+    font-size: 1.4rem;
+    padding: 1.25rem 2.25rem !important;
   }
   // left this out because there is a lot of wide button text
   // white-space: nowrap;
@@ -29,14 +37,34 @@
 
   &:hover,
   &:focus {
-    outline: 2px solid $gray2;
+
     background-color: #F5F5F5;
     color: $awd-green;
     border-color: transparent;
+    box-shadow: inset 0px 0px 0px 1px $gray2, inset 0px 0px 0px 3px $white; // because curved outlines were appearing as boxes on mobile safari
+    @media screen and (min-width: 960px){
+      box-shadow: inset 0px 0px 0px 2px $gray2, inset 0px 0px 0px 4px $white; // because curved outlines were appearing as boxes on mobile safari
+    }
   }
-  @media screen and (min-width: 960px){
-    font-size: 1.2rem;
-    padding: 1.5rem 2.5rem;
+  &-on-navy {
+    box-shadow: inset 0px 0px 0px 1px $white, inset 0px 0px 0px 3px $awd-navy; // because curved outlines were appearing as boxes on mobile safari
+
+    @media screen and (min-width: 960px){
+      box-shadow: inset 0px 0px 0px 2px $white, inset 0px 0px 0px 4px $awd-navy; // because curved outlines were appearing as boxes on mobile safari
+    }
+    
+    &:hover,
+    &:focus {
+      color: $awd-navy;
+      box-shadow: inset 0px 0px 0px 1px $white, inset 0px 0px 0px 3px $awd-navy; // because curved outlines were appearing as boxes on mobile safari
+
+      @media screen and (min-width: 960px){
+        box-shadow: inset 0px 0px 0px 2px $white, inset 0px 0px 0px 4px $awd-navy; // because curved outlines were appearing as boxes on mobile safari
+      }
+    }
+    &.btn-alt {
+
+    }
   }
   &-alt {
     color: $awd-green;
@@ -53,6 +81,10 @@
   padding: .75rem 3rem;
   @media screen and (min-width: 960px){
     padding: 1.5rem 4.5rem;
+  }
+  @media screen and (min-width: 1200px){
+    padding: 1.5rem 6.5rem;
+    
   }
 }
 

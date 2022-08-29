@@ -18,6 +18,7 @@ register_nav_menus(array(
 	'main-nav' => 'Main Navigation',
 	'footer-nav-1' => 'Footer Navigation - Column 1',
 	'footer-nav-2' => 'Footer Navigation - Column 2',
+	'header-top-bar' => 'Header - Top Bar',
 ));
 
 //	post thumbnails
@@ -38,9 +39,9 @@ function magneti_enqueue_scripts() {
 		return false;
 	
 	//register
-    wp_register_style( 'template-stylesheet', get_theme_file_uri() . '/library/css/style.css', array(), '1.5', 'all' );
+    wp_register_style( 'template-stylesheet', get_theme_file_uri() . '/library/css/style.css', array(), '2.0', 'all' );
     wp_register_script( 'slick', THEME_URL.'/library/js/slick/slick.min.js', array(), '1.0' );
-		wp_register_script( 'lib', THEME_URL.'/library/js/lib.js', array( 'jquery' ), '1.1' );
+		wp_register_script( 'lib', THEME_URL.'/library/js/lib.js', array( 'jquery' ), '2.0' );
 		wp_register_script( 'fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js', array( 'jquery' ), '4.0' );
     wp_register_style( 'fancybox-styles', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css', array(), '4.0', 'all' );
 
@@ -135,8 +136,7 @@ function socialicons_func( $atts ) {
 		foreach($socials as $icon):
 
 			$html .= '<li>';
-			$html .= "<a class='social-icons-list-item' href='" . $icon['url'] . "' title='DesignWealth on " . $icon['destination_name'] . "'>";
-			$html .= $icon['icon'];
+			$html .= "<a class='social-icons-list-item social-icon social-icon-" . $icon['icon'] . "' href='" . $icon['url'] . "' title='DesignWealth on " . $icon['destination_name'] . "'>";
 			$html .= "</a>";
 			$html .= '</li>';
 			
@@ -168,11 +168,14 @@ add_action( 'init', 'awd_register_classes_post_type' );
 function awd_register_classes_post_type() {
 	$args = array(
 		'label' => 'Classes',
-		'public' => false,
+		'public' => true,
 		'show_ui' => true,
 		'show_in_menu' => true,
-		'has_archive' => false,
-		'rewrite' => true,
+		'has_archive' => true,
+		'rewrite' => [
+			'slug' => 'classes',
+			'pages' => true
+		],
 		'query_var' => true,
 		'menu_icon' => 'dashicons-format-video', // See Icon --> https://developer.wordpress.org/resource/dashicons/#format-video
 		'supports' => ['title', 'editor', 'thumbnail']

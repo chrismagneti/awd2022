@@ -1,7 +1,7 @@
 <?php
 $moduleClasses = ' ';
 $hasBgImage = $args['backgroundImage'] && isset($args['backgroundImage']['sizes']);
-$slidesToShow = min(count($args['classes']), $args['slidesToShow']);
+$slidesToShow = 1;
 $moduleClasses .= " shows-{$slidesToShow}-slides";
 ?>
 <div class="custom-template-module template-part-classes_carousel_module padding-control<?php echo $args['additionalClasses']; ?> <?php echo $moduleClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($args['additionalStyles']) { echo ' style="' . $args['additionalStyles'] . '"'; } ?> data-slide-count="<?php if(isset($args['classes']) && $args['classes']): echo count($args['classes']); endif; ?>">
@@ -35,9 +35,9 @@ $moduleClasses .= " shows-{$slidesToShow}-slides";
                   </a>
                 <?php endif; ?>
                 <h2 class="class-post-title green"><?php echo truncateString($class->post_title, 80); ?></h2>
-                <p class="class-post-location body-l mb-0"><?php echo get_field('location', $class->ID); ?></p>
-                <p class="class-post-date body-l"><?php echo get_field('class_date', $class->ID); ?></p>
-                <p class="body-l class-post-content">
+                <p class="class-post-location mb-0"><?php echo get_field('location', $class->ID); ?></p>
+                <p class="class-post-date"><?php echo get_field('class_date', $class->ID); ?></p>
+                <p class="class-post-content">
                   <?php echo truncateString($class->post_content, 200); ?>
                 </p>
                 <div class="button-wrap">

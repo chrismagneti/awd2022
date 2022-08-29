@@ -7,51 +7,29 @@ TYPOG MIXINS
 .text-center { text-align: center; }
 .text-right  { text-align: right; }
 
-@font-face {
-  font-family: 'Din 2014';
-  font-weight: 700;
-  src: url("../fonts/DIN2014-Bold.woff") format("woff");
-}
-@font-face {
-  font-family: 'Din 2014';
-  font-weight: 600;
-  src: url("../fonts/DIN2014-DemiBold.woff") format("woff");
-}
-@font-face {
-  font-family: 'Din 2014';
-  font-weight: 800;
-  src: url("../fonts/DIN2014-ExtraBold.woff") format("woff");
-}
-@font-face {
-  font-family: 'Din 2014';
-  font-weight: 300;
-  src: url("../fonts/DIN2014-Light.woff") format("woff");
-}
-@font-face {
-  font-family: 'Din 2014';
-  font-weight: 400;
-  src: url("../fonts/DIN2014-Regular.woff") format("woff");
-}
-
 .din-bold {
-  font-family: 'Din 2014';
+  font-family: din-2014;
   font-weight: 700;
 }
 .din-demi {
-  font-family: 'Din 2014';
+  font-family: din-2014;
   font-weight: 600;
 }
 .din-extra-bold {
-  font-family: 'Din 2014';
+  font-family: din-2014;
   font-weight: 800;
 }
 .din-light {
-  font-family: 'Din 2014';
+  font-family: din-2014;
   font-weight: 300;
 }
 .din {
-  font-family: 'Din 2014';
+  font-family: din-2014;
   font-weight: 400;
+}
+
+@mixin sans-serif-300 {
+	@extend .din-light;
 }
 
 @mixin sans-serif-400 {
@@ -67,19 +45,19 @@ TYPOG MIXINS
 }
 
 @mixin serif-400 {
-	font-family: 'Georgia', sans-serif;
+	font-family: tasman, sans-serif;
 	font-style: normal;
 	font-weight: 400;
 }
 
 @mixin serif-700 {
-	font-family: 'Georgia', sans-serif;
+	font-family: tasman, sans-serif;
 	font-style: normal;
 	font-weight: 700;
 }
 
 @mixin serif-800 {
-	font-family: 'Georgia', sans-serif;
+	font-family: tasman, sans-serif;
 	font-style: normal;
 	font-weight: 800;
 }
@@ -97,6 +75,13 @@ body {
   color: $gray1;
 }
 
+
+// =x- =-x- =x- =x= x-=x
+//
+//  Type Mixins
+//  -- mixins so that we can include media queries inside them, and then @include them in other places
+//
+// =x- =x- =x- =x- =-x =-x
 @mixin m-body {
   font-size: 1rem;
   line-height: 1.5;
@@ -106,140 +91,173 @@ body {
   line-height: 1.5;
 }
 
-.h-s {
-  margin-bottom: 8px;
-  font-size: 18px;
-  line-height: 117%;
-  @include sans-serif-700;
-  color: $black;
+@mixin text-main-nav {
+  @include sans-serif-400;
+  font-size: 10px;
+  line-height: 120%;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  @media screen and (min-width: 768px){
+    font-size: 12px;
+  }
+  @media screen and (min-width: 960px){
+    font-size: 14px;
+  }
 }
 
-.h-m {
-  margin-bottom: 18px;
+@mixin text-main-nav-lg {
+  @include sans-serif-400;
   font-size: 24px;
-  line-height: 117%;
-  @include sans-serif-800;
+  line-height: 120%;
 }
 
-.h-l {
-  margin-bottom: 20px;
+@mixin text-wide {
+  @include sans-serif-800;
+  line-height: 150%;
+  text-transform: uppercase;
+  letter-spacing: 1.95px;
+  font-size: 18px;
+  @media screen and (min-width: 768px){
+    font-size: 30px;
+    letter-spacing: 5.5px;
+  }
+  @media screen and (min-width: 960px){
+    font-size: 38px;
+    letter-spacing: 7.5px;
+  }
+}
+
+@mixin text-h-2xl-serif {
+  @include serif-400;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0.017em;
+  @media screen and (min-width: 768px){
+    font-size: 32px;
+  }
+  @media screen and (min-width: 960px){
+    font-size: 44px;
+  }
+}
+
+@mixin text-h-2xl-sans-serif {
+  @include sans-serif-300;
+  line-height: 120%;
+  font-size: 26px;
+  @media screen and (min-width: 768px){
+    font-size: 34px;
+  }
+  @media screen and (min-width: 960px){
+    font-size: 48px;
+  }
+}
+
+@mixin text-header-sm {
+  @include sans-serif-300;
+  line-height: 120%;
   font-size: 32px;
-  line-height: 107%;
-  @include sans-serif-800;
 }
 
+@mixin text-body-lg {
+  @include sans-serif-400;
+  font-size: 22px;
+  line-height: 120%;
+  @media screen and (min-width: 768px){
+    font-size: 24px;
+  }
+  @media screen and (min-width: 960px){
+    font-size: 28px;
+  }
+}
+
+@mixin text-body {
+  @include sans-serif-400;
+  font-size: 16px;
+  line-height: 150%;
+  @media screen and (min-width: 768px){
+    font-size: 18px;
+  }
+  @media screen and (min-width: 960px){
+    font-size: 20px;
+  }
+}
+
+@mixin text-body-110 {
+  @include sans-serif-700;
+  font-size: 16px;
+  line-height: 110%;
+  @media screen and (min-width: 768px){
+    font-size: 18px;
+  }
+  @media screen and (min-width: 960px){
+    font-size: 20px;
+  }
+}
+
+@mixin text-body-sm {
+  @include sans-serif-400;
+  font-size: 12px;
+  line-height: 120%;
+  @media screen and (min-width: 768px){
+    font-size: 14px;
+  }
+  @media screen and (min-width: 960px){
+    font-size: 16px;
+  }
+}
+
+// =x- =-x- =x- =x= x-=x
+//
+//  Type Classes (Can be used in WYSIWYG content)
+//
+// =x- =x- =x- =x- =-x =-x
 .h-xl {
-  margin-bottom: 23px;
-  font-size: calc(36px + 10 * ((100vw - 320px) / 960));
-  line-height: 114%;
-  font-weight: 400;
+  @include text-body-110;
+  margin-bottom: 20px;
 }
 
 .h-2xl {
-  font-size: 1.625rem;
-  line-height: 104%;
-  @extend .din-light;
-  margin-bottom: 1.75rem;
+  @include text-h-2xl-sans-serif;
+  margin-bottom: .75rem;
   
   @media screen and (min-width: 960px){
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     font-size: 3rem;
   }
   
   
   &.serif {
-    line-height: 120%;
-    @include serif-400;
-    font-size: calc(22px + 12 * ((100vw - 320px) / 960));
-    @media screen and (min-width: 768px){
-      font-size: calc(34px + 12 * ((100vw - 320px) / 960));
-    }
+    @include text-h-2xl-serif;
   }
-
-  // &.hw {
-  //   line-height: 90%;
-  //   font-size: calc(45px + 25 * ((100vw - 320px) / 960));
-  // }
 }
 
 .h-3xl {
-  margin-bottom: 30px;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  @extend .din-extra-bold;
-  // letter-spacing: .125em;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  
-  @media screen and (min-width: 768px){
-    font-size: 2.375rem;
-    letter-spacing: .2em;
+  margin-bottom: 30px; // matches distance below "Our Investment Services" in mobile home page design
+  // margin-bottom: 12px;
+  @include text-wide;
+  @media screen and (min-width: 960px){
+    margin-bottom: 64px;
   }
-
-  // &.hw {
-  //   line-height: 90%;
-  //   font-size: calc(60px + 50 * ((100vw - 320px) / 960));
-  // }
-}
-
-.h-special {
-  margin-bottom: 0;
-  font-size: calc(46px + 20 * ((100vw - 320px) / 960));
-  line-height: 100%;
-  letter-spacing: 7px;
-  font-weight: 700;
-
-  &.upper {
-    text-transform: uppercase;
-  }
-}
-
-.h-hand {
-  margin-bottom: 0;
-  font-size: calc(50px + 20 * ((100vw - 320px) / 960));
-  line-height: 100%;
-
-  &.upper {
-    text-transform: uppercase;
-  }
-}
-
-.h-handxl {
-  margin-bottom: 0;
-  font-size: calc(60px + 50 * ((100vw - 320px) / 960));
-  line-height: 100%;
 }
 
 .body-s {
-  @include sans-serif-400;
-  font-size: 12px;
-  line-height: 144%;
+  @include text-body-sm;
 }
 
 .body-m {
-  @include sans-serif-400;
-  font-size: 18px;
-  line-height: 144%;
+  @include text-body;
 }
 
 .body-l {
-  @include sans-serif-400;
-  font-size: 20px;
-  line-height: 150%;
+  @include text-body-lg;
 }
 
-.body-xl {
-  @include sans-serif-400;
-  font-size: 28px;
-  line-height: 120%;
-}
 
-.body-2xl {
-  @include sans-serif-400;
-  font-size: 32px;
-  line-height: 122%;
-}
-
+// =x- =-x- =x- =x= x-=x
+//
+//  COLORS
+//
+// =x- =x- =x- =x- =-x =-x
 .text-white {
   color: $white;
 }
@@ -295,6 +313,15 @@ h1, h2, h3, h4, h5,
 
   &:last-child {
     margin-bottom: 0;
+  }
+}
+
+// if a heading comes immediately after a tag that indicates we are in the middle of a body of content, give it some top margin
+p, ul, ol, blockquote {
+  ~ {
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 40px;
+    }
   }
 }
 
@@ -363,7 +390,6 @@ h1, h2, h3, h4, h5,
 
 h2, h3, h4, h5,
 .h-s, .h-m, .h-l, .h-xl, .h-2xl, .h-3xl {
-  margin-top: 40px;
 
   &:first-child {
     margin-top: 0;
@@ -392,15 +418,12 @@ a {
 
 p {
   position: relative;
-  margin-bottom: 25px;
-  @include sans-serif-400;
-  font-size: 1rem;
-  line-height: 145%;
+  margin-bottom: .5rem; // Seemed tight, but matches space between first and second paragraph in the "contact us" card on the home page mobile design
+  @include text-body;
   color: $gray1;
   
   @media screen and (min-width: 960px){
-    font-size: 18px;
-    
+    margin-bottom: 25px; 
   }
 
   &:last-child {
@@ -421,7 +444,7 @@ blockquote {
   margin-bottom: 30px;
 
   p {
-    @extend .body-2xl;
+    @include text-h-2xl-serif;
   }
 
   &:last-child {
@@ -438,8 +461,7 @@ blockquote {
 
     li {
       margin-bottom: 8px;
-      font-size: 20px;
-      line-height: 31px;
+      @include text-body;
     }
 
     &.more {
@@ -467,23 +489,18 @@ p code {
     word-wrap: break-word;
     padding: 0.1rem 0.3rem 0.2rem;
     border-radius: 0.2rem;
+    font-family: monospace;
 }
 
 
 .nav-text {
-  font-size: .875rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  @include text-main-nav;
   text-decoration: none;
-  @extend .din-bold;
   outline: none;
   &:focus,
   &:active {
     outline: none !important; // button goes multi-line sometimes and looks whack with an outline
     text-decoration: underline;
-  }
-  &--sm {
-    font-size: .75rem;
   }
 }
 
@@ -505,6 +522,10 @@ p code {
     display: inline-block;
     width: 100%;
     transform: translate3d(0,0,0);
+    max-width: .25rem;
+    @media screen and (min-width: 768px){
+      max-width: .5rem;
+    }
   }
 
   &.serif {
@@ -532,4 +553,32 @@ p code {
 
 .no-underline {
   text-decoration: none;
+}
+
+.body-sm-tablet-down {
+  @media screen and (max-width: 767px){
+    font-size: 12px;
+  }
+}
+
+.mb-4 {
+  margin-bottom: 4px;
+}
+
+.lg\:mb-8 {
+  @media screen and (min-width: 960px){
+    margin-bottom: 8px;
+  }
+}
+
+.mobile-body-desktop-body-l {
+  @include sans-serif-400;
+  font-size: 16px;
+  line-height: 150%;
+  @media screen and (min-width: 768px){
+    font-size: 18px;
+  }
+  @media screen and (min-width: 960px){
+    font-size: 28px;
+  }
 }

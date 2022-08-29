@@ -20,9 +20,6 @@ body.blog {
     }
     .blog-post {
       margin-bottom: 5.675rem;
-
-      
-
       @media screen and (min-width: 768px){
         margin-bottom: 0;
         display: flex; // make the child take this containers full height
@@ -36,7 +33,7 @@ body.blog {
       }
       &-title {
         font-weight: 300;
-        margin-bottom: 2rem;
+        margin-bottom: 1.75rem;
         font-size: 1.375rem;
         @media screen and (min-width: 768px){
           font-size: 2rem;
@@ -51,6 +48,7 @@ body.blog {
         }
       }
       &-date {
+        margin-bottom: 18px;
         @media screen and (min-width: 768px){
           margin-bottom: 2.5rem;
         }
@@ -67,13 +65,13 @@ body.blog {
         margin-top: 1.5rem;
         padding: 0;
         @media screen and (min-width: 768px){
-          margin-top: 3.125rem;
+          margin-top: 2rem;
           flex-grow: 1;
           display: flex;
           flex-direction: column;
         }
         .btn {
-          margin-top: 2.25rem;
+          // margin-top: 2.25rem;
           @media screen and (min-width: 768px){
             margin-top: auto; 
             align-self: flex-start;
@@ -121,9 +119,8 @@ body.single {
     }
     .blog-post-author,
     .blog-post-date {
-      font-weight: 700;
+      @include text-body-110;
       @media screen and (min-width: 960px){
-        font-size: 1.75rem;
         margin-bottom: 0;
       }
     }
@@ -134,7 +131,7 @@ body.single {
       }
     }
     .blog-post-date {
-      margin-bottom: 2.5rem;
+      margin-bottom: 76px;
       @media screen and (min-width: 960px){
         padding-left: 1rem;
         margin-bottom: 0;
@@ -151,6 +148,11 @@ body.single {
         margin-bottom: 2.25rem;
         @media screen and (min-width: 960px){
           font-size: 1.75rem;
+        }
+        &:first-child {
+          @media screen and (min-width: 960px){
+            margin-bottom: 86px;
+          }
         }
         p, a {
           font-size: inherit;

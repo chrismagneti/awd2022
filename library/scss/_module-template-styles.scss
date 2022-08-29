@@ -20,13 +20,17 @@ body.page-template-template-modulebased_custom #main-content {
   
     &.more-padding-bottom {
       .center {
-        padding-bottom: 30px;
+        @media screen and (min-width: 960px){
+          padding-bottom: 30px;
+        }
       }
     }
   
     &.more-padding-top {
       .center {
-        padding-top: 40px;
+        @media screen and (min-width: 960px){
+          padding-top: 40px;
+        }
       }
     }
   }
@@ -37,6 +41,18 @@ body.page-template-template-modulebased_custom #main-content {
   
   .no-padding-bottom {
     padding-bottom: 0 !important;
+  }
+  
+  .extra-padding-top-desktop-up {
+    @media screen and (min-width: 960px){
+      padding-top: 80px !important;
+    }
+  }
+  
+  .extra-padding-bottom-desktop-up {
+    @media screen and (min-width: 960px){
+      padding-bottom: 80px !important;
+    }
   }
   
   .padding-control.add-bottom {
@@ -56,8 +72,6 @@ body.page-template-template-modulebased_custom #main-content {
   }
   
   .template-part-hero.short {
-    // padding: 180px 0 80px;
-    text-align: center;
   
     &.add-bottom {
       padding-bottom: 150px;
@@ -89,14 +103,13 @@ body.page-template-template-modulebased_custom #main-content {
   }
   
   .custom-template-module.dark-mode p,
-  .custom-template-module.dark-mode p a,
+  .custom-template-module.dark-mode p a:not(.btn),
   .custom-template-module.dark-mode ul li,
   .custom-template-module.dark-mode ol li,
   .custom-template-module.dark-mode h1,
   .custom-template-module.dark-mode h2,
   .custom-template-module.dark-mode h3,
   .custom-template-module.dark-mode h4,
-  .custom-template-module.dark-mode h5,
   .custom-template-module.dark-mode h5,
   .custom-template-module.dark-mode .h-m,
   .custom-template-module.dark-mode .h-l,
@@ -144,6 +157,10 @@ body.page-template-template-modulebased_custom #main-content {
   
   .template-part-standard-content .inner-wrap {
     position: relative;
+    padding-right: 1rem;
+    @media screen and (min-width: 1200px){
+      max-width: 860px;
+    }
   }
   
   .template-part-standard-content .inner-wrap p:last-child {
@@ -173,6 +190,20 @@ body.page-template-template-modulebased_custom #main-content {
           margin-bottom: 0;
         }
         
+      }
+    }
+    &.no-left-padding-right-col {
+      @media screen and (min-width: 768px){
+        .column2 {
+          padding-left: 0 !important;
+        }
+      }
+    }
+    &.no-right-padding-left-col {
+      @media screen and (min-width: 768px){
+        .column1 {
+          padding-right: 0 !important;
+        }
       }
     }
   }

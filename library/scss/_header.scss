@@ -32,6 +32,19 @@
     @media screen and (min-width: 960px){
       padding: 1rem 0;
     }
+    &-nav {
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      li {
+        a {
+          @extend .nav-text;
+        }
+      }
+    }
+    
   }
 
   .bottom-bar {
@@ -79,7 +92,7 @@
       height: 100vh;
       z-index: 100;
       left: 0;
-      top: 70px;
+      top: 68px;
       background-color: $awd-black;
       padding: 2rem;
       pointer-events: none;
@@ -88,7 +101,7 @@
       transform-origin: left top;
     }
     @media screen and (min-width: 960px){
-      margin-right: -1rem;
+      margin-right: -19px;
     }
     @media screen and (min-width: 1400px){
       position: relative;
@@ -103,7 +116,7 @@
     }
     &.shown {
       @media screen and (max-width: 959px){
-        transform: scaleY(100%);
+        transform: scaleY(1);
         opacity: 1;
         pointer-events: all;
         ul {
@@ -155,7 +168,7 @@
           @include pseudo;
           background-color: $awd-black;
           // the transform positioning, as well as calc(100% + 2px) is to prevent a weird gap from forming between the nav items where the background color was shining through
-          transform: translate3d(-50%,-50%,0) scaleY(100%);
+          transform: translate3d(-50%,-50%,0) scaleY(1);
           width: calc(100% + 2px);
           height: 100%;
           top: 50%;

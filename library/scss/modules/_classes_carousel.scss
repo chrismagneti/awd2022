@@ -14,6 +14,7 @@
         position: relative;
       }
       @media screen and (min-width: 1200px) {
+        border-top-left-radius: 0;
         padding: 4rem;
       }
     }
@@ -68,6 +69,28 @@
           }
           @media screen and (min-width: 768px){
             margin-bottom: 0;
+          }
+        }
+      }
+      .class-post {
+        &-location,
+        &-date {
+          font-size: 16px;
+          line-height: 120%;
+          @media screen and (min-width: 768px){
+            font-size: 22px;
+          }
+          @media screen and (min-width: 960px){
+            font-size: 28px;
+          }
+        }
+        &-location {
+          margin-bottom: 4px;
+        }
+        &-date {
+          margin-bottom: 21px;
+          @media screen and (min-width: 960px){
+            margin-bottom: 40px;
           }
         }
       }
@@ -245,37 +268,28 @@
       }
       .rounded-card {
         margin-bottom: 5rem; // need to push the bottom of this container down far enough to account for the slick slider's pagination
-        @media screen and (min-width: 960px) {
-          margin-bottom: 10rem; // need to push the bottom of this container down far enough to account for the slick slider's pagination
-        }
-      }
-    }
-
-    // IF the carousel is going to need slick dots or arrows, we want to account for that here.
-    &.shows-2-slides:not([data-slide-count="2"]),
-    &.shows-3-slides:not([data-slide-count="3"]) {
-      .slick-dots {
-        display: block; // enabled if the module has multiple slides
-      }
-      .class-carousel {
-        margin-bottom: 5rem; // need to push the bottom of this container down far enough to account for the slick slider's pagination
         @media screen and (min-width: 768px) {
-          margin-bottom: 13rem; // need to push the bottom of this container down far enough to account for the slick slider's pagination
-        }
-        @media screen and (min-width: 960px) {
           margin-bottom: 10rem; // need to push the bottom of this container down far enough to account for the slick slider's pagination
         }
       }
     }
-    &.shows-2-slides,
-    &.shows-3-slides {
-      .a-slide {
-        &-inner {
-          @media screen and (min-width: 768px){
-            padding-right: 2rem;
-          }
-        }
-      }
-    }
+  }
+}
+
+
+.class-posts-grid {
+  margin: 4rem 0;
+  @media screen and (min-width: 768px){
+    margin: 5rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+    column-gap: 2rem;
+  }
+  @media screen and (min-width: 960px){
+    margin: 8rem 0;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 10rem;
+    column-gap: 3rem;
   }
 }

@@ -3,6 +3,7 @@
   &-toggle {
     @include serif-700;
     color: $awd-green;
+    font-style: italic;
     display: flex;
     align-items: center;
     justify-content: space-between;

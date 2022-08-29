@@ -11,7 +11,7 @@
   with https://www.npmjs.com/package/@googlemaps/js-api-loader.
 -->
 <script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvP2B0dt5_G8IWXdrN4nkbwGw7MOu6zIc&callback=initMap&v=weekly"
+  src="https://maps.googleapis.com/maps/api/js?key=<?php echo get_field('google_maps_api_key', 'option'); ?>&callback=initMap&v=weekly"
   defer
 ></script>
 <script>

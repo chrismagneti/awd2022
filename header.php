@@ -22,11 +22,8 @@
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 	<?php /* Fonts */ ?>
-	<link rel="stylesheet" href="https://use.typekit.net/vxg8qxs.css">
+	<link rel="stylesheet" href="https://use.typekit.net/szs6jor.css">
 	
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;800&display=swap" rel="stylesheet">
 	
 	<?php wp_head(); ?>
 </head>
@@ -39,7 +36,11 @@
 		<div class="center wide">
 
 			<div class="top-bar">
-				<a class="nav-text" href="#">All Design Partner Services</a>
+				<?php wp_nav_menu(array(
+					'theme_location' => 'header-top-bar',
+					'container' => 'nav',
+					'container_class' => 'top-bar-nav'
+				)); ?>
 			</div>	
 
 			<div class="bottom-bar">

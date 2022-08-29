@@ -5,7 +5,11 @@
       <div class="aspect-video" style="background-image: url(<?php echo $thumbnailUrl; ?>); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
     </a>
     <div class="post-content-wrapper">
-      <h2 class="blog-post-title green"><?php echo truncateString($args['thePost']->post_title, 70); ?></h2>
+      <h2 class="blog-post-title green">
+        <a href="<?php echo get_permalink($args['thePost']->ID); ?>">
+          <?php echo truncateString($args['thePost']->post_title, 40); ?>
+        </a>
+      </h2>
       <p class="blog-post-author mb-0">
         <?php echo get_the_author_meta('display_name', $args['thePost']->post_author); ?>
       </p>
@@ -15,7 +19,7 @@
       <div class="blog-post-content body-l">
         <?php echo truncateString($args['thePost']->post_content, 200); ?>
       </div>
-      <a href="<?php echo get_permalink($args['thePost']->ID); ?>" class="btn">Read More</a>
+      <a href="<?php echo get_permalink($args['thePost']->ID); ?>" class="btn btn-on-navy">Read More</a>
     </div>
   </div>
 </div>

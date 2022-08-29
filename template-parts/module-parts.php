@@ -103,6 +103,22 @@
 				}
 			}
 
+			if( get_sub_field('no_padding_left_right_col') ) {
+				$additionalClasses .= ' no-left-padding-right-col';
+			}
+
+			if( get_sub_field('no_padding_right_left_col') ) {
+				$additionalClasses .= ' no-right-padding-left-col';
+			}
+
+			if( get_sub_field('extra_padding_top_desktop_up') ) {
+				$additionalClasses .= ' extra-padding-top-desktop-up';
+			}
+
+			if( get_sub_field('extra_padding_bottom_desktop_up') ) {
+				$additionalClasses .= ' extra-padding-bottom-desktop-up';
+			}
+
 			if( get_row_layout() == 'hero_module' ): ?>
 
 				<?php 
@@ -154,30 +170,6 @@
 
 					</div>
 				</div>
-
-			<?php elseif( get_row_layout() == 'split_thirds_content_module' ): ?>
-
-				<div class="custom-template-module template-part-3366-content padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>>
-
-
-			        <div class="center">
-			           
-			        	<div class="template-split-3366-wrapper">
-
-			        		<div class="a-columner column1">
-			        			<?php the_sub_field('main_content_left'); ?>
-			        		</div>
-
-			        		<div class="a-columner column2">
-			        			<?php the_sub_field('main_content_right'); ?>
-			        		</div>
-
-			        		<div class="clear"></div>
-
-			        	</div>
-
-			        </div>
-			    </div>
 
 			<?php elseif( get_row_layout() == 'column_module' ): ?>
 
@@ -402,217 +394,6 @@
 			        </div>
 
 			    </div>
-
-			<?php elseif( get_row_layout() == 'faq_module' ): ?>
-
-				<div class="custom-template-module template-part-faq padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>>
-
-
-					<div class="faq-intro">
-	        			<div class="center">
-		        			<?php if( get_sub_field('intro_section_content') ) { ?>
-		        				<?php the_sub_field('intro_section_content'); ?>
-		        			<?php } ?>
-		        		</div>
-		        	</div>
-
-			        <div class="template-faq-expand-wrapper">
-			        	<div class="center">
-
-			        		<?php if( have_rows('faq_content') ):
-			        			while( have_rows('faq_content') ) : the_row(); ?>
-
-			        				<div class="a-faq-item">
-			        					<div class="q-part"><span class="h-m black"><?php the_sub_field('q_line'); ?></span> <span class="icon"></span></div>
-			        					<div class="a-part">
-			        						<?php if(get_sub_field('add_a_second_column')) { ?>
-			        							<div class="split-parts">
-			        								<div class="part part-1">
-			        									<div class="content-piece">
-					        								<?php the_sub_field('a_content'); ?>
-					        							</div>
-			        								</div>
-
-			        								<div class="part part-2">
-			        									<div class="content-piece">
-					        								<?php the_sub_field('right_column_content'); ?>
-					        							</div>
-			        								</div>
-			        							</div>
-			        						<?php } else { ?>
-			        							<div class="content-piece">
-			        								<?php the_sub_field('a_content'); ?>
-			        							</div>
-			        						<?php } ?>
-			        					</div>
-			        				</div>
-
-			        			<?php endwhile;
-			        		endif; ?>
-
-			        	</div>
-			        </div>
-
-			    </div>
-
-			<?php elseif( get_row_layout() == 'services_module_short' ): ?>
-
-				<div class="custom-template-module template-part-faq padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>>
-
-
-					<?php if( get_sub_field('intro_content') ) { ?>
-						<div class="services-content-intro">
-				        	<div class="center">
-				        		<?php the_sub_field('intro_content'); ?>
-				        	</div>
-				        </div>
-				    <?php } ?>
-
-			        <div class="main-services-content-wrapper short">
-			        	<div class="mountain-wrap">
-			        		<div class="inner">
-				        		<img class="mtn-image" src="<?php bloginfo('template_directory'); ?>/library/images/mtns.svg" alt="">
-
-				        		<div class="center">
-
-					        		<div class="inner-content-wrapper">
-					        			<div class="pin-wrapper">
-
-					        				<?php $pinCount = 1; ?>
-
-					        				<?php if( have_rows('services') ):
-			        							while( have_rows('services') ) : the_row(); ?>
-
-							        				<div class="a-pin a-pin-<?php echo $pinCount; ?>">
-							        					<div class="flag">
-							        						<div class="icon"><svg width="67" height="52" viewBox="0 0 67 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="blue-fill" fill-rule="evenodd" clip-rule="evenodd" d="M67 4H38V13H6L16 33L6 52H38V40H67V4Z" fill="#8CBBD9"/><path class="blue-fill" fill-rule="evenodd" clip-rule="evenodd" d="M67 4H38V13H6L16 33L6 52H38V40H67V4Z" fill="#8CBBD9"/><path fill-rule="evenodd" clip-rule="evenodd" d="M66.615 0H31.9301V10.4H0L11.8075 31.2L0 52H38.4991V41.6H66.615V34.6373H38.4991V10.4V6.96271H66.615V0ZM19.3743 31.2L11.558 17.3627H31.9301V41.6881V45.1254H11.558L19.3743 31.2Z" fill="#262626"/></svg></div>
-							        						<span class="label h-m black"><?php the_sub_field('service_name'); ?></span>
-							        					</div>
-
-							        					<div class="pole"><div class="circle"></div></div>
-							        				</div>
-
-					        					<?php 
-					        					$pinCount++;
-
-					        					endwhile;
-			        						endif; ?>
-
-					        			</div>
-					        		</div>
-
-					        	</div>
-					        </div>
-			        	</div>
-
-			        	<div class="button-wrap">
-			        		<?php if(get_sub_field('scroll_more_text')) { ?>
-	        					<div class="mobile-swipe-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M172.9 432.2L2.355 261.7c-3.14-3.14-3.14-8.226 0-11.37l170.5-170.5c3.14-3.14 8.226-3.14 11.37 0s3.14 8.226 0 11.37L27.44 247.1h412.5c4.427 0 8.036 3.597 8.036 8.04s-3.61 8.035-8.036 8.035H27.44l156.8 156.8c3.14 3.14 3.14 8.226 0 11.37C181.1 435.3 175.1 435.3 172.9 432.2z"/></svg>&nbsp;&nbsp;&nbsp;<?php the_sub_field('scroll_more_text'); ?>&nbsp;&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M275.1 79.82l170.5 170.5c3.14 3.14 3.14 8.226 0 11.37l-170.5 170.5c-3.14 3.14-8.226 3.14-11.37 0c-3.14-3.14-3.14-8.226 0-11.37l156.8-156.8H8.037c-4.427 0-8.036-3.593-8.036-8.036s3.609-8.039 8.036-8.039h412.5l-156.8-156.8c-3.14-3.14-3.14-8.226 0-11.37C266.9 76.68 272 76.68 275.1 79.82z"/></svg></div>
-	        				<?php }
-
-	        				if(get_sub_field('button_path')) { ?>
-	        					<a href="<?php the_sub_field('button_path'); ?>" class="btn white outline"><?php the_sub_field('button_text'); ?></a>
-	        				<?php } ?>
-	        			</div>
-			        </div>
-
-			    </div>
-
-			<?php elseif( get_row_layout() == 'services_module_long' ): ?>
-
-				<div class="custom-template-module template-part-faq padding-control<?php echo $additionalClasses; ?>"<?php if(get_sub_field('section_id')) { echo ' id="'.get_sub_field("section_id").'"'; } if($additionalStyles) { echo ' style="' . $additionalStyles . '"'; } ?>>
-
-
-					<div class="services-content-intro">
-			        	<div class="center">
-
-			        		<h2 class="h-2xl orange text-center upper">Our Core Services</h2>
-
-			        	</div>
-			        </div>
-
-			        <div class="main-services-content-wrapper long">
-			        	<div class="mountain-wrap">
-			        		<div class="inner">
-				        		<img class="mtn-image" src="<?php bloginfo('template_directory'); ?>/library/images/mtns.svg" alt="">
-
-				        		<div class="center">
-
-				        			<div class="inner-content-wrapper">
-					        			<div class="pin-wrapper">
-
-					        				<?php $pinCount = 1; ?>
-
-					        				<?php if( have_rows('services') ):
-			        							while( have_rows('services') ) : the_row(); ?>
-
-							        				<div class="a-pin link a-pin-<?php echo $pinCount; ?><?php if($pinCount == 1) {echo ' active';} ?>" data-slide="<?php echo $pinCount; ?>">
-							        					<div class="flag">
-							        						<div class="icon"><svg width="67" height="52" viewBox="0 0 67 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="blue-fill" fill-rule="evenodd" clip-rule="evenodd" d="M67 4H38V13H6L16 33L6 52H38V40H67V4Z" fill="#8CBBD9"/><path class="blue-fill" fill-rule="evenodd" clip-rule="evenodd" d="M67 4H38V13H6L16 33L6 52H38V40H67V4Z" fill="#8CBBD9"/><path fill-rule="evenodd" clip-rule="evenodd" d="M66.615 0H31.9301V10.4H0L11.8075 31.2L0 52H38.4991V41.6H66.615V34.6373H38.4991V10.4V6.96271H66.615V0ZM19.3743 31.2L11.558 17.3627H31.9301V41.6881V45.1254H11.558L19.3743 31.2Z" fill="#262626"/></svg></div>
-							        						<span class="label h-m black"><?php the_sub_field('service_name'); ?></span>
-							        					</div>
-
-							        					<div class="pole"><div class="circle"></div></div>
-							        				</div>
-
-					        					<?php 
-					        					$pinCount++;
-
-					        					endwhile;
-			        						endif; ?>
-
-					        			</div>
-					        		</div>
-
-					        	</div>
-
-					        </div>
-			        	</div>
-
-			        	<div class="button-wrap">
-	        				<div class="mobile-swipe-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M172.9 432.2L2.355 261.7c-3.14-3.14-3.14-8.226 0-11.37l170.5-170.5c3.14-3.14 8.226-3.14 11.37 0s3.14 8.226 0 11.37L27.44 247.1h412.5c4.427 0 8.036 3.597 8.036 8.04s-3.61 8.035-8.036 8.035H27.44l156.8 156.8c3.14 3.14 3.14 8.226 0 11.37C181.1 435.3 175.1 435.3 172.9 432.2z"/></svg>&nbsp;&nbsp;&nbsp;SWIPE FOR MORE&nbsp;&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M275.1 79.82l170.5 170.5c3.14 3.14 3.14 8.226 0 11.37l-170.5 170.5c-3.14 3.14-8.226 3.14-11.37 0c-3.14-3.14-3.14-8.226 0-11.37l156.8-156.8H8.037c-4.427 0-8.036-3.593-8.036-8.036s3.609-8.039 8.036-8.039h412.5l-156.8-156.8c-3.14-3.14-3.14-8.226 0-11.37C266.9 76.68 272 76.68 275.1 79.82z"/></svg></div>
-	        			</div>
-			        </div>
-
-			        <div class="services-support-slider-outer">
-			        	<div class="center">
-
-			        		<div class="services-support-slider-inner">
-
-		    					<?php $pinCount = 1; ?>
-
-		        				<?php if( have_rows('services') ):
-									while( have_rows('services') ) : the_row(); ?>
-
-			        					<div class="slide slide-<?php echo $pinCount; ?>">
-			        						<div class="mobile-trigger">
-			        							<div class="body-2xl"><?php the_sub_field('service_name'); ?></div>
-			        							<div class="icon"></div>
-			        						</div>
-			        						<div class="mobile-expand">
-			        							<?php the_sub_field('service_content'); ?>
-			        						</div>
-			        					</div>
-
-			        				<?php 
-		        					$pinCount++;
-
-		        					endwhile;
-								endif; ?>
-
-							</div>
-
-						</div>
-    				</div>
-			    </div>
-
-			<?php elseif( get_row_layout() == 'divider_module' ): ?>
-
-				<div class="custom-template-module template-divider-module padding-control<?php echo $additionalClasses; ?>">
-					<div class="center">
-						<div class="divider-line"></div>
-					</div>
-				</div>
 
 			<?php elseif( get_row_layout() == '5050_content_card_w_large_image_panel' ): ?>
 

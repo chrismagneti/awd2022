@@ -19,10 +19,28 @@ body {
   @include sans-serif-400;
   font-size: 18px;
   background-color: $awd-black;
+  display: flex; // sticky footer prep
+  flex-direction: column; // sticky footer prep
   &.lock-scrolling {
     @media screen and (max-width: 959px) {
       overflow: hidden;
     }
+  }
+  @media screen and (min-width: 960px){
+  }
+}
+
+#wrap {
+  flex-grow: 1; // sticky footer --> push footer to the bottom
+  display: flex; // sticky footer prep
+  flex-direction: column; // sticky footer prep
+  @media screen and (min-width: 960px){
+  }
+}
+
+#content {
+  flex-grow: 1; // sticky footer --> push footer to the bottom
+  @media screen and (min-width: 960px){
   }
 }
 
@@ -67,17 +85,24 @@ img.alignright {
 
 .button-wrap {
   position: relative;
-  padding-top: 12px;
+  // padding-top: 12px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 37px;
 
   @media screen and (min-width: 960px) {
     margin-top: 3.5rem;
     flex-direction: row;
     display: flex;
+  }
+  
+  &.flex-tablet-up {
+    @media screen and (min-width: 768px){
+      flex-direction: row;
+      display: flex;
+    }
   }
 
   &.centered {
@@ -101,8 +126,10 @@ img.alignright {
   padding: 0 20px;
   max-width: 960px;
 
-  @media screen and (min-width: 1200px){
-    padding: 0;
+  &:not(.wide){
+    @media screen and (min-width: 1200px){
+      padding: 0;
+    }
   }
 
   // &.outer {
@@ -111,6 +138,9 @@ img.alignright {
   //   }
   // }
 
+  &.medium {
+    max-width: 1080px;
+  }
   &.wide {
     max-width: 1228px;
   }
@@ -184,11 +214,6 @@ img.alignright {
       }
     }
 
-    .gform_button {
-      @media screen and (max-width: 640px){
-        width: 100%;
-      }
-    }
     
     .gform_fields {
       grid-row-gap: 14px !important;
@@ -197,16 +222,23 @@ img.alignright {
       .gfield input,
       .gfield select,
       .gfield textarea {
-        padding: 1.5rem;
+        padding: .5rem 1rem;
         border: 1px solid #f0f0f0;
         background-color: #f0f0f0;
         color: #a3a3a3 !important;
-        font-family: "Georgia", serif;
+        @include serif-700;
         font-style: italic;
-        font-size: 1.25rem;
+        font-size: .875rem;
         font-weight: bold;
         @include thetransition;
         appearance: none;
+        line-height: 28px;
+
+        @media screen and (min-width: 960px){
+          padding: .75rem 1.25rem;
+          font-size: 1.125rem;
+        }
+        
         &:hover {
           background-color: lighten(#f0f0f0, 2%);
           border-color: lighten(#f0f0f0, 2%);
@@ -215,6 +247,10 @@ img.alignright {
           background-color: lighten(#f0f0f0, 2%);
           outline-color: $awd-arctic
         }
+      }
+
+      .gfield textarea {
+        line-height: 120%;
       }
 
       .gfield select {

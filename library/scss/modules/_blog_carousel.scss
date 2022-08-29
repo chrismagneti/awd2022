@@ -23,8 +23,9 @@
       align-items: center;
       > .center {
         width: 100%;
-        padding-bottom: 40px;
+        padding-bottom: 1rem;
         @media screen and (min-width: 960px){
+          padding-bottom: 40px;
         }
         [class^="h-"]{
           margin-bottom: 0;
@@ -53,6 +54,12 @@
         }
       }
     }
+
+    .post-thumbnail-wrapper {
+      @media screen and (min-width: 960px){
+        margin-bottom: 61px;
+      }
+    }
   
     .blog-carousel {
       @media screen and (min-width: 960px){
@@ -65,17 +72,17 @@
       margin-left: 0;
       position: absolute;
       transform: translate3d(-50%,0,0);
-      top: calc(100% + 3rem);
+      top: calc(100% + 90px);
       left: 50%;
       display: none; // only enabled if the parent has .has-multiple-slides class
       
       @media screen and (min-width: 768px){
-        top: calc(100% + 7rem);
-      }
-  
-      @media screen and (min-width: 768px){
         // top: calc(100% + -4rem);
         top: calc(100% + 9rem);
+      }
+      
+      @media screen and (min-width: 960px){
+        top: calc(100% + 11rem);
       }
   
       li {
@@ -130,11 +137,17 @@
         background-position: center;
         transition: all .2s ease-out;
         cursor: pointer;
-        top: 100%;
+        top: calc(100% + 43px);
         border-radius: 100%;
         border: 1px solid white;
+        
         @media screen and (min-width: 768px){
+          width: 3.75rem;
+          height: 3.75rem;
           top: calc(100% + 4rem);
+        }
+        @media screen and (min-width: 960px){
+          top: calc(100% + 6rem);
         }
   
         &:not(.slick-disabled){
@@ -144,12 +157,6 @@
           }
         }
         
-        @media screen and (min-width: 768px){
-          // top: calc(100% - 10rem);
-          top: calc(100% + 4rem);
-          width: 3.75rem;
-          height: 3.75rem;
-        }
         
         &.slick-disabled {
           opacity: .25 !important;
@@ -212,9 +219,9 @@
         display: block; // enabled if the module has multiple slides
       }
       .blog-carousel {
-        margin-bottom: 5rem; // need to push the bottom of this container down far enough to account for the slick slider's pagination
+        margin-bottom: 98px; // need to push the bottom of this container down far enough to account for the slick slider's pagination
         @media screen and (min-width: 768px){
-          margin-bottom: 10rem; // need to push the bottom of this container down far enough to account for the slick slider's pagination
+          margin-bottom: 193px; // need to push the bottom of this container down far enough to account for the slick slider's pagination
         }
       }
     }

@@ -12,6 +12,9 @@
         margin-top: -15vw;
         position: relative;
         align-self: flex-end;
+        @media screen and (max-width: 959px){
+          border-radius: 0 $br-small 0 $br-small;
+        }
         @media screen and (min-width: 960px){
           margin-top: -18rem;
         }
@@ -40,7 +43,7 @@
       }
       .image-panel-wrapper {
         @media screen and (min-width: 960px){
-          border-radius: 8rem 0 8rem 0;
+          border-radius: $br-lg 0 $br-lg 0;
         }
       }
     }
@@ -57,7 +60,7 @@
       }
       .image-panel-wrapper {
         @media screen and (min-width: 960px){
-          border-radius: 0 8rem 0 8rem;
+          border-radius: 0 $br-lg 0 $br-lg;
         }
       }
     }

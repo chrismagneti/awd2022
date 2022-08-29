@@ -10,38 +10,69 @@
       
     }
   }
+
+  &-title {
+    padding-right: 2rem; // title does not seem to fill the whole space horizontally, but the content below does
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all .2s ease-out;
+      &:hover {
+        color: $awd-arctic;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-date,
+  &-author {
+    @include text-body-lg;
+  }
+
+  &-date {
+    margin-bottom: .75rem;
+    @media screen and (min-width: 960px){
+      margin-bottom: 1rem;
+    }
+  }
   
   .post-content-wrapper { 
-    padding: 3rem 0;
     @media screen and (min-width: 768px){
-      padding: 2rem 1rem;
+      // padding: 2rem 1rem;
     }
     @media screen and (min-width: 1200px){
-      padding: 3rem 1.5rem;
+      // padding: 3rem 1.5rem;
     }
     .blog-post-title {
       margin-bottom: 1rem;
-      line-height: 1.3;
+      @include text-h-2xl-sans-serif;
+      @media screen and (min-width: 960px){
+        font-size: 40px; // special font size to try to prevent the titles from breaking onto three lines
+      }
     }
     .blog-post-content {
+      margin-bottom: 2rem;
+      @media screen and (min-width: 960px){
+        margin-bottom: 66px;
+      }
       blockquote, p, li, a {
-        font-size: 1rem;
+        @include text-body;
       }
       p {
-        line-height: 1.5;
       }
     }
     .btn {
-      margin-top: 4rem;
+      // margin-top: 4rem;
     }
   }
   .post-thumbnail-wrapper {
     display: block;
     overflow: hidden;
-    border-radius: 2rem 0 2rem 0;
-    transition: opacity .3s ease-in;
+    border-radius: $br-small 0 $br-small 0;
+    transition: opacity .3s ease-out;
+    margin-bottom: 1.25rem;
     &:hover {
-      opacity: .75;
+      opacity: .5;
     }
     @media screen and (min-width: 960px){
       border-radius: 5rem 0 5rem 0;
@@ -51,6 +82,35 @@
       display: block;
       height: auto;
       max-width: 100%;
+    }
+    .aspect-video {
+      &:after {
+        @media screen and (min-width: 960px){
+          padding-bottom: 72%;
+        }
+      }
+    }
+  }
+}
+
+.slick-track {
+  display: flex;
+  .blog-post {
+    display: flex;
+    height: auto;
+    flex-grow: 1;
+    .btn {
+      margin-top: auto;
+    }
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      .post-content-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   }
 }
