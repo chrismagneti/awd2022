@@ -6,8 +6,8 @@
     </a>
     <div class="post-content-wrapper">
       <h2 class="blog-post-title green">
-        <a href="<?php echo get_permalink($args['thePost']->ID); ?>">
-          <?php echo truncateString($args['thePost']->post_title, 40); ?>
+        <a class="line-clamp-2" href="<?php echo get_permalink($args['thePost']->ID); ?>">
+          <?php echo $args['thePost']->post_title; ?>
         </a>
       </h2>
       <p class="blog-post-author mb-0">

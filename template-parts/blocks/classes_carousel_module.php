@@ -34,11 +34,11 @@ $moduleClasses .= " shows-{$slidesToShow}-slides";
                     <div class="aspect-video" style="background-image: url(<?php echo $thumbnailUrl; ?>); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
                   </a>
                 <?php endif; ?>
-                <h2 class="class-post-title green"><?php echo truncateString($class->post_title, 80); ?></h2>
+                <h2 class="class-post-title line-clamp-2 green"><?php echo $class->post_title; ?></h2>
                 <p class="class-post-location mb-0"><?php echo get_field('location', $class->ID); ?></p>
                 <p class="class-post-date"><?php echo get_field('class_date', $class->ID); ?></p>
-                <p class="class-post-content">
-                  <?php echo truncateString($class->post_content, 200); ?>
+                <p class="class-post-content line-clamp-3">
+                  <?php echo $class->post_content; ?>
                 </p>
                 <div class="button-wrap">
                   <a href="<?php echo get_field('url', $class->ID); ?>" class="btn">Register</a>

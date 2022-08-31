@@ -84,6 +84,16 @@
 
   #primary-navigation-wrap {
     @include thetransition;
+    &:after {
+      @include pseudo;
+      transition: width .5s ease-out; // :) for all the resizers out there
+      will-change: width; // :) for all the resizers out there
+      background-color: $awd-black;
+      height: 100%;
+      left: 100%;
+      width: 0;
+      top: 0;
+    }
     @media screen and (max-width: 959px){
       display: flex;
       flex-direction: column;
@@ -101,17 +111,13 @@
       transform-origin: left top;
     }
     @media screen and (min-width: 960px){
-      margin-right: -19px;
+      margin-right: -18px;
     }
     @media screen and (min-width: 1400px){
+      margin-right: -19px;
       position: relative;
       &:after {
-        @include pseudo;
-        background-color: $awd-black;
-        height: 100%;
-        left: 100%;
         width: 3rem;
-        top: 0;
       }
     }
     &.shown {
@@ -167,17 +173,22 @@
         &:after {
           @include pseudo;
           background-color: $awd-black;
-          // the transform positioning, as well as calc(100% + 2px) is to prevent a weird gap from forming between the nav items where the background color was shining through
-          transform: translate3d(-50%,-50%,0) scaleY(1);
           width: calc(100% + 2px);
           height: 100%;
-          top: 50%;
-          left: 50%;
+          // the transform positioning, as well as calc(100% + 2px) is to prevent a weird gap from forming between the nav items where the background color was shining through
+          transform: scaleY(1);
+          top: 0;
+          left: 0;
           z-index: 1;
           transform-origin: center top;
           // transform-origin: right center;
           transition: all 0.3s ease-out;
           will-change: transform;
+
+          // // the transform positioning, as well as calc(100% + 2px) is to prevent a weird gap from forming between the nav items where the background color was shining through
+          // transform: translate3d(-50%,-50%,0) scaleY(1);
+          // top: 50%;
+          // left: 50%;
         }
         
         &:hover {
@@ -195,7 +206,7 @@
               transition: color .1s ease-in;
             }
             &:after {
-              transform: translate3d(-50%,-50%,0) scaleY(0);
+              transform: scaleY(0);
               transition: all 0.1s ease-out;
             }
           }

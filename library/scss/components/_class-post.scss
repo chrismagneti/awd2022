@@ -13,6 +13,12 @@
 
   &-title {
     padding-right: 2rem; // title does not seem to fill the whole space horizontally, but the content below does
+    a {
+      &:hover {
+        color: $awd-arctic;
+        text-decoration: underline;
+      }
+    }
   }
 
   &-date,
@@ -60,10 +66,10 @@
     display: block;
     overflow: hidden;
     border-radius: $br-small 0 $br-small 0;
-    transition: opacity .3s ease-in;
+    transition: opacity .3s ease-out;
     margin-bottom: 1.25rem;
     &:hover {
-      opacity: .75;
+      opacity: .5;
     }
     @media screen and (min-width: 768px){
       margin-bottom: 0;

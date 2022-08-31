@@ -5,19 +5,16 @@
     
     <div class="inner-wrap">
       <?php if(isset($args['list']) && $args['list']): ?>
-        <div class="large-icon-list">
-          <?php foreach($args['list'] as $item): ?>
-            <div class="large-icon-list-row">
-              <div class="large-icon-list-row-header">
-                <div class="icon-wrapper" style="background-image: url(<?php echo $item['icon']['sizes']['large']; ?>); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
-                <h3 class="icon-list-heading h-2xl"><?php echo $item['heading']; ?></h3>
-              </div>
-              <div class="content">
-                <?php echo $item['body']; ?>
-              </div>
-            </div>
-          <?php endforeach; ?>
-        </div>
+        <?php 
+					get_template_part( 
+						'template-parts/components/large-icon-list', 
+						null, // name
+						[
+							// variables going into the template part
+							'list' => $args['list'],
+						]
+					); 
+				?>
       <?php else: ?>
         <p class="white body-xl">There's nothing to see here</p>
       <?php endif; ?>

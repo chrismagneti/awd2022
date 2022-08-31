@@ -17,6 +17,10 @@
     top: 0;
     right: 0;
     z-index: 2;
+    opacity: 0.8;
+    @media screen and (max-width: 959px){
+      opacity: 0.4;
+    }
     @media screen and (min-width: 960px){
       background-size: 65%;
     }
@@ -26,6 +30,7 @@
     align-items: center;
     position: relative;
     z-index: 1;
+    max-height: 608px;
     &:after {
       display: block;
       position: relative;
@@ -113,6 +118,13 @@
       // margin-top: 2rem;
       @media screen and (min-width: 1200px){
         // margin-top: 3rem;        
+      }
+    }
+  }
+  &.has-addl-content.has-bg {
+    .hero-img-container {
+      > .aspect-container {
+        max-height: 728px;
       }
     }
   }

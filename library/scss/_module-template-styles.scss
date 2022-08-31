@@ -267,6 +267,10 @@ body.page-template-template-modulebased_custom #main-content {
         bottom: 0;
         left: 0;
         z-index: 2;
+        opacity: 0.8;
+        @media screen and (max-width: 959px){
+          opacity: 0.4;
+        }
         // transform: rotate(180deg)
       }
     }
@@ -729,5 +733,12 @@ body.page-template-template-modulebased_custom #main-content {
         margin-bottom: 3rem;
       }
     }
+  }
+}
+
+// icon is sized slightly differently than the rest, need to tighten it a little
+div#services-page-investment-services-section .large-icon-list-row:first-child .icon-wrapper {
+  @media screen and (min-width: 960px){
+    background-size: 83px !important;
   }
 }

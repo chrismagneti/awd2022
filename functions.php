@@ -35,7 +35,7 @@ add_action( 'wp_enqueue_scripts', 'magneti_enqueue_scripts' );
 
 function magneti_enqueue_scripts() {
 
-	$frontEndPackageVersion = '2.1.4';
+	$frontEndPackageVersion = '2.1.5';
 	
 	if( is_admin() )
 		return false;
@@ -173,6 +173,7 @@ function awd_register_classes_post_type() {
 		'public' => true,
 		'show_ui' => true,
 		'show_in_menu' => true,
+		'publicly_queryable' => true,
 		'has_archive' => true,
 		'rewrite' => [
 			'slug' => 'classes',

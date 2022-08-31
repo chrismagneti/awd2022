@@ -1,0 +1,18 @@
+.magneti-custom-template-wrapper {
+  .template-part-content-card-w-large-icon-list-large-image-panel {
+    @media screen and (max-width: 959px){
+      background-color: white !important;
+    }
+    .rounded-card {
+      @media screen and (max-width: 959px){
+        padding: 0 !important; // the card doesnt show, so we eliminate excess padding
+      }
+    }
+    .large-icon-list {
+      margin-top: 66px; // putting margin on this instead of the neighbor above, because this way we dont have to unset the margin on the parent if no icons are present in this list
+      @media screen and (min-width: 960px){
+        margin-top: 90px; // putting margin on this instead of the neighbor above, because this way we dont have to unset the margin on the parent if no icons are present in this list
+      }
+    }
+  }
+}

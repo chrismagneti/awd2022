@@ -122,6 +122,9 @@
 			if( get_row_layout() == 'hero_module' ): ?>
 
 				<?php 
+					if( get_sub_field('additional_content') ){
+						$additionalClasses .= ' has-addl-content';
+					}
 					get_template_part( 
 						'template-parts/blocks/hero_module', 
 						null, // name
@@ -403,6 +406,24 @@
 						null, // name
 						[
 							// variables going into the template part
+							'additionalClasses' => $additionalClasses, 
+							'additionalStyles' => $additionalStyles,
+							'backgroundImage' => get_sub_field('background_image'),
+							'cardRounding' => get_sub_field('rounding'),
+						]
+					); 
+				?>
+				
+			<?php elseif( get_row_layout() == 'content_card_w_large_icon_list_large_image_panel' ): ?>
+
+				<?php 
+					$list = get_sub_field('icon_list');
+					get_template_part( 
+						'template-parts/blocks/content_card_w_large_icon_list_large_image_panel', 
+						null, // name
+						[
+							// variables going into the template part
+							'list' => $list,
 							'additionalClasses' => $additionalClasses, 
 							'additionalStyles' => $additionalStyles,
 							'backgroundImage' => get_sub_field('background_image'),
