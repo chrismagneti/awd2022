@@ -254,6 +254,7 @@ body.page-template-template-modulebased_custom #main-content {
       margin-top: -11vw;
       position: relative;
       z-index: 1;
+      max-height: 728px;
       &:before {
         display: block;
         content: '';
