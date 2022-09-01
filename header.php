@@ -46,7 +46,7 @@
 			<div class="bottom-bar">
 
 				<div class="left">
-					<a href="<?php echo get_option('siteurl'); ?>" id="main-logo">
+					<a href="<?php echo get_option('siteurl'); ?>" id="main-logo" title="Back to Home page">
 						<img src="<?php bloginfo('template_directory'); ?>/library/images/main-logo.png" alt="Accelerated Wealth Denver" />
 					</a>
 				</div>

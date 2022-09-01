@@ -133,7 +133,7 @@ function socialicons_func( $atts ) {
 
 	$html = '<div class="social-icons-list"><ul class="social-icons-list-ul">';
 
-	if($socials && count($socials)):
+	if(is_array($socials) && count($socials)):
 		
 		foreach($socials as $icon):
 

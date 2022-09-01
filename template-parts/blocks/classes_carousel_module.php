@@ -30,18 +30,21 @@ $moduleClasses .= " shows-{$slidesToShow}-slides";
               <div class="a-slide-inner">
                 <?php if(!$hasBgImage): ?>
                   <?php /* only rendering this if there is no bg image in the module, to match the design spec */ ?>
-                  <a href="<?php echo get_field('url', $class->ID); ?>" class="post-thumbnail-wrapper">
+                  <a href="<?php echo get_field('url', $class->ID); ?>" class="post-thumbnail-wrapper" target="_blank">
                     <div class="aspect-video" style="background-image: url(<?php echo $thumbnailUrl; ?>); background-size: cover; background-repeat: no-repeat; background-position: center;"></div>
                   </a>
                 <?php endif; ?>
-                <h2 class="class-post-title line-clamp-2 green"><?php echo $class->post_title; ?></h2>
-                <p class="class-post-location mb-0"><?php echo get_field('location', $class->ID); ?></p>
-                <p class="class-post-date"><?php echo get_field('class_date', $class->ID); ?></p>
-                <p class="class-post-content line-clamp-3">
+                <h2 class="class-post-title green">
+                  <a href="<?php echo get_field('url', $class->ID); ?>" target="_blank">
+                    <?php echo get_field('event_title', $class->ID); ?>
+                  </a>
+                </h2>
+                <p class="class-post-date"><?php echo get_field('sub_line', $class->ID); ?></p>
+                <p class="class-post-content">
                   <?php echo $class->post_content; ?>
                 </p>
                 <div class="button-wrap">
-                  <a href="<?php echo get_field('url', $class->ID); ?>" class="btn">Register</a>
+                  <a href="<?php echo get_field('url', $class->ID); ?>" class="btn" target="_blank">Register</a>
                 </div>
               </div>
             </div>

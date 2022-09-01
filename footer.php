@@ -9,7 +9,7 @@ $socials = get_field('social_icons', 'option');
 
 		<div class="center outer wide">
 
-			<a href="/" class="footer-logo-wrap" title="to home page">
+			<a href="/" class="footer-logo-wrap" title="Back to Home page">
 				<img src="<?php bloginfo('template_directory'); ?>/library/images/main-logo.png" alt="I.M. Financial, LLC" />
 			</a>
 
