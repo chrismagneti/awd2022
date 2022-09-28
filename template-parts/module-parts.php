@@ -376,7 +376,7 @@
 																<?php } ?>
 	
 																<?php if(get_sub_field('link_url')) { ?>
-																	<a href="<?php echo get_sub_field('link_url'); ?>" class="nav-text dark-mode-target">
+																	<a href="<?php echo get_sub_field('link_url'); ?>" class="nav-text dark-mode-target" target="_blank">
 																	<?php echo get_sub_field('link_text'); ?>
 																	</a>
 																<?php } ?>

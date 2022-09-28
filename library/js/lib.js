@@ -49,6 +49,14 @@ jQuery(document).ready(function ($) {
         $("body").addClass("lock-scrolling");
       }
     });
+
+    if($(window).width() < 960) {
+      $('#menu-main-navigation a').on('click', function() {
+        navTrigger.removeClass("open");
+        mainNav.removeClass("shown");
+        $("body").removeClass("lock-scrolling");
+      })
+    }
   });
 
   // awd-accordion functionality

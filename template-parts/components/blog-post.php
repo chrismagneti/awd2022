@@ -17,7 +17,7 @@
         <?php echo get_the_date('m.d.y', $args['thePost']->ID); ?>
       </p>
       <div class="blog-post-content body-l">
-        <?php echo truncateString($args['thePost']->post_content, 200); ?>
+        <?php echo '<p>' . get_the_excerpt($args['thePost']->ID) . '</p>'; ?>
       </div>
       <a href="<?php echo get_permalink($args['thePost']->ID); ?>" class="btn btn-on-navy">Read More</a>
     </div>
